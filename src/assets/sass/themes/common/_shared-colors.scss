@@ -1,0 +1,536 @@
+$white: #ffffff;
+$black: #000000;
+
+$textSecColor: #d2d2d2 !default;
+$bgIconColor: #f7f6f4 !default;
+$titleColor: #393939 !default;
+$entriesNoColor: #6e6e6e !default;
+$draftColor: #be6060 !default;
+$archiveColor: #8a6fb1 !default;
+$cardFooterColor: #999999 !default;
+$errorsColor: #be6060 !default;
+
+$shared-colors: (
+  color-primary: (
+    "dark": $primaryColor,
+    "light": $primaryColor,
+  ),
+  color-primary-9: (
+    "dark": rgba($primaryColor, 0.09),
+    "light": rgba($primaryColor, 0.09),
+  ),
+  color-primary-13: (
+    "dark": rgba($primaryColor, 0.13),
+    "light": rgba($primaryColor, 0.13),
+  ),
+  color-primary-5: (
+    "dark": rgba($primaryColor, 0.5),
+    "light": rgba($primaryColor, 0.5),
+  ),
+  color-active: (
+    "dark": darken($primaryColor, 5%),
+    "light": darken($primaryColor, 5%),
+  ),
+  primary-color: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+  primary-menu-text-color: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+  primary-menu-text-active-color: (
+    "dark": var(--color-primary),
+    "light": #7a838f,
+  ),
+  primary-menu-icon-color: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+  view-header-action-color: (
+    "dark": #212121,
+    "light": var(--color-primary),
+  ),
+  card-leading-color: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+  card-secondary-color: (
+    "dark": var(--color-6e),
+    "light": var(--color-6e),
+  ),
+  card-leading-bg: (
+    "dark": var(--color-22),
+    "light": #f7f6f4,
+  ),
+  card-caption-color: (
+    "dark": #999999,
+    "light": var(--color-6e),
+  ),
+  rb-bg: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+  ripple-primary: (
+    "dark": #{rgba($primaryColor, 0.3)},
+    "light": #{rgba($primaryColor, 0.3)},
+  ),
+  ec-border: (
+    "dark": var(--color-primary),
+    "light": #d9d9d7,
+  ),
+  ec-i-bg: (
+    "dark": var(--color-primary),
+  ),
+  highlight-text-color: (
+    "dark": #{darken($primaryColor, 10%)},
+    "light": #{darken($primaryColor, 10%)},
+  ),
+  dark: (
+    "dark": #2f2f2f,
+    "light": #2f2f2f,
+  ),
+  color-gray-600: (
+    "dark": #6d6d6d,
+    "light": #6d6d6d,
+  ),
+  color-gray-b4: (
+    "dark": #b4b4b4,
+    "light": #b4b4b4,
+  ),
+  color-gray-200: (
+    "dark": #d2d2d2,
+    "light": #d2d2d2,
+  ),
+  color-gray: (
+    "dark": #111,
+    "light": #f0f0f0,
+  ),
+  color-6e: (
+    "dark": #6e6e6e,
+    "light": #6e6e6e,
+  ),
+  color-invalid: (
+    "dark": #be6060,
+    "light": #be6060,
+  ),
+  color-black: (
+    "dark": #{$white},
+    "light": #{$black},
+  ),
+  color--39: (
+    "dark": #acacac,
+    "light": #393939,
+  ),
+  color-white: (
+    "dark": #{$black},
+    "light": #{$white},
+  ),
+  color-ec: (
+    "dark": #444444,
+    "light": #ecebea,
+  ),
+  color-bg: (
+    "dark": #22252a,
+    "light": #f7f7f7,
+  ),
+  color-b6: (
+    "dark": #b6b6b6,
+    "light": #b6b6b6,
+  ),
+  color--3e: (
+    "dark": #929292,
+    "light": #3e3e3e,
+  ),
+  color-1e: (
+    "dark": #1e1e1e,
+    "light": #1e1e1e,
+  ),
+  color-22: (
+    "dark": #22252a,
+    "light": #22252a,
+  ),
+  color-2d: (
+    "dark": #2d3035,
+    "light": #2d3035,
+  ),
+  color-light-primary: (
+    "dark": #ece9e0,
+    "light": #ece9e0,
+  ),
+  background: (
+    "dark": #f7f6f4,
+    "light": #f7f6f4,
+  ),
+  content-bg: (
+    "dark": #1e1e1e,
+    "light": #{$white},
+  ),
+  menu-color: (
+    "dark": #c4c4c4,
+    "light": #464646,
+  ),
+  menu-active-color: (
+    "dark": #7a838f,
+    "light": #4b4b4b,
+  ),
+  primary-lightest-color: (
+    "dark": transparent,
+    "light": #fbfbfb,
+  ),
+  surface-a: (
+    "dark": var(--color-1e),
+    "light": #{$white},
+  ),
+  surface-b: (
+    "dark": #121212,
+    "light": #fafafa,
+  ),
+  surface-c: (
+    "dark": hsla(0, 0%, 100%, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  surface-d: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  surface-e: (
+    "dark": var(--color-1e),
+    "light": #{$white},
+  ),
+  surface-f: (
+    "dark": #262626,
+    "light": #{$white},
+  ),
+  text-color: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": #2c2c2c,
+  ),
+  text-color-secondary: (
+    "dark": rgba(255, 255, 255, 0.6),
+    "light": #616161,
+  ),
+  primary-color-text: (
+    "dark": #212121,
+    "light": #{$white},
+  ),
+  root-menu-text-color: (
+    "dark": #657380,
+    "light": #657380,
+  ),
+  menu-item-text-color: (
+    "dark": #b8b8b8,
+    "light": #535353,
+  ),
+  inlineMenuBorderColor: (
+    "dark": #393c42,
+    "light": #e4e4e4,
+  ),
+  menuItemHoverBgColor: (
+    "dark": rgba(0, 0, 0, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  border-color: (
+    "dark": #393c42,
+    "light": #f2f3f5,
+  ),
+  breadcrumb-bg: (
+    "dark": var(--color-2d),
+    "light": #{$white},
+  ),
+  entry-border-color: (
+    "dark": #393c42,
+    "light": #e6e6e6,
+  ),
+  view-header-border-color: (
+    "dark": var(--border-color),
+    "light": #e0deda,
+  ),
+  view-header-action-bg: (
+    "dark": #a0a0a0,
+    "light": #{$white},
+  ),
+  layout-search-panel-bg: (
+    "dark": var(--color-2d),
+    "light": #{$white},
+  ),
+  card-background: (
+    "dark": var(--color-2d),
+    "light": #{$white},
+  ),
+  p-menu-bg: (
+    "dark": var(--color-2d),
+    "light": #{$white},
+  ),
+  bg-white: (
+    "dark": var(--color-2d),
+    "light": white,
+  ),
+  placeholder-color: (
+    "dark": #b5b5b5,
+    "light": #b5b5b5,
+  ),
+  is-border-color: (
+    "dark": #666,
+    "light": #f0f0f0,
+  ),
+  is-border-color-dark: (
+    "dark": #757575,
+    "light": #e0e0e0,
+  ),
+  is-color: (
+    "dark": #bbb,
+    "light": #4b4b4b,
+  ),
+  rb-danger-bg: (
+    "dark": #bf7e7e,
+    "light": #bf7e7e,
+  ),
+  white: (
+    "dark": #2d3035,
+    "light": white,
+  ),
+  dt-th-color: (
+    "dark": #{$white},
+    "light": "#4a4a4a",
+  ),
+  dt-border-color: (
+    "dark": #404040,
+    "light": #e0deda,
+  ),
+  tpl-form-bg: (
+    "dark": var(--color-22),
+    "light": #ecebea,
+  ),
+  btn-gray-bg: (
+    "dark": var(--color-22),
+    "light": #f7f6f4,
+  ),
+  tab-link-bg: (
+    "dark": #2d3035,
+    "light": #ecebea,
+  ),
+  tab-link-color: (
+    "dark": #999999,
+    "light": #424242,
+  ),
+  tab-link-bg-active: (
+    "dark": #262626,
+    "light": #{$white},
+  ),
+  color-ce: (
+    "dark": #262626,
+    "light": #ececec,
+  ),
+  sb-hf-bg: (
+    "dark": #262626,
+    "light": #{$white},
+  ),
+  ac-bg: (
+    "dark": #262626,
+    "light": #{$white},
+  ),
+  a-b-color: (
+    "dark": #{$black},
+    "light": #dbdbda,
+  ),
+  a-b-bg: (
+    "dark": #1e1e1e,
+    "light": #f7f6f4,
+  ),
+  k-k-bg: (
+    "dark": #{$black},
+    "light": #f5f5f5,
+  ),
+  k-k-dbg: (
+    "dark": #333,
+    "light": #e9e4e4,
+  ),
+  workflow-bg: (
+    "dark": #262626,
+    "light": #f1f1ef,
+  ),
+  d-h-bg: (
+    "dark": #353535,
+    "light": #f8f7f3,
+  ),
+  ec-bg: (
+    "dark": #2d3035,
+    "light": #e7e7e5,
+  ),
+  smoke-white: (
+    "dark": rgb(249, 248, 244),
+  ),
+  b-color: (
+    "dark": #212121,
+  ),
+  history-card-bg: (
+    "dark": #1f2124,
+  ),
+  color-r177: (
+    "dark": rgba(177, 161, 110, 0.1),
+  ),
+  card-dashboard-bg: (
+    "dark": #2d3035,
+  ),
+  delete-color: (
+    "dark": white,
+  ),
+  delete-bg: (
+    "dark": #2d3035,
+  ),
+  delete-hover-bg: (
+    "dark": #2d3035,
+  ),
+  delete-shadow: (
+    "dark": rgba(0, 0, 0, 0.1),
+  ),
+  btn-plain: (
+    "dark": rgba(255, 255, 255, 0.8),
+  ),
+  btn-plain-hover: (
+    "dark": rgba(255, 255, 255, 0.8),
+  ),
+  c-i-bg: (
+    "dark": #262626,
+    "light": #f7f6f4,
+  ),
+  c-i--d-bg: (
+    "dark": #262626,
+    "light": #fdf3f3,
+  ),
+  color-f4: (
+    "dark": #262626,
+    "light": #f4f5f7,
+  ),
+  color-type-icon-border: (
+    "dark": var(--color-22),
+    "light": #{$white},
+  ),
+  dt-tr-bg: (
+    "dark": var(--color-2d),
+  ),
+  dt-tr-bg-archived: (
+    "dark": #212327,
+    "light": rgba(239, 239, 239, 0.75),
+  ),
+  menu-bg-color: (
+    "dark": #2d3035,
+    "light": #{$white},
+  ),
+  new-btn-bg: (
+    "dark": var(--color-2d),
+  ),
+  new-btn-color: (
+    "dark": #bababa,
+  ),
+  sidebar-bg: (
+    "light": #{$white},
+    "dark": #1f1f1f,
+  ),
+  input-focus-bg: (
+    "light": #{$white},
+    "dark": transparent,
+  ),
+  draft-bg: (
+    "dark": #be6060,
+    "light": #be6060,
+  ),
+  archive-bg: (
+    "dark": #8a6fb1,
+    "light": #8a6fb1,
+  ),
+  error-color: (
+    "dark": #be6060,
+    "light": #be6060,
+  ),
+  cancel-bg: (
+    "dark": transparent,
+  ),
+  menu-link-color: (
+    "light": "#2f2f2f",
+    "dark": white,
+  ),
+  new-user-td-background: (
+    "light": "#f2f2f2",
+    "dark": darken(#2d3035, 3%),
+  ),
+  disabled-bg: (
+    "dark": #1e1e1e,
+    "light": #f7f6f4,
+  ),
+  widget-bg-color: (
+    "dark": #1e1e1e,
+    "light": #f4f4f4,
+  ),
+  white-color: (
+    "dark": #1e1e1e,
+    "light": #{$white},
+  ),
+  doc-background: (
+    "dark": #1e1e1e,
+    "light": #f4f4f4,
+  ),
+  widget-list-header-bg-color: (
+    "dark": #1e1e1e,
+    "light": #d2d2d2,
+  ),
+  widget-list-background-color: (
+    "dark": #1e1e1e,
+    "light": #ebebeb,
+  ),
+  widget-group-bg: (
+    "dark": #1e1e1e,
+    "light": #f4f4f4,
+  ),
+  widget-disabled-color: (
+    "dark": #1e1e1e,
+    "light": #e6e6e6,
+  ),
+  post-text: (
+    "dark": #f0eaea,
+    "light": #2f2f2f,
+  ),
+  cell-icon-color: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(0, 0, 0, 0.2),
+  ),
+  cell-highlight-color: (
+    "dark": #{$white},
+    "light": #{$black},
+  ),
+  topbar-bg: (
+    "light": #{$white},
+    "dark": #1e1e1e,
+  ),
+  wn-hover-background-color: (
+    "dark": #2c2c2c,
+    "light": #f9f8f5,
+  ),
+  scroll-bg: (
+    "light": #d2d2d2,
+    "dark": #4e4e4e,
+  ),
+  group-bg: (
+    dark: #1e1e1e,
+  ),
+  header-bg: (
+    "light": #f9f8f7,
+    "dark": #444444,
+  ),
+  readonly-bg: (
+    "dark": #1e1e1e,
+  ),
+  color-welcome: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+  background-welcome: (
+    "light": #{$white},
+    "dark": #1e1e1e,
+  ),
+  loader-color: (
+    "dark": var(--color-primary),
+    "light": var(--color-primary),
+  ),
+);

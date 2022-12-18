@@ -1,0 +1,50 @@
+//layout common
+$animationDuration: 0.2s !default;
+$animationTimingFunction: cubic-bezier(0.05, 0.74, 0.2, 0.99) !default;
+$letterSpacing: normal !default;
+
+$mobileBreakpoint: 991px !default;
+
+$bodyBgColor: var(--bodyBgColor) !default;
+
+$textSecondaryColor: var(--textSecondaryColor) !default;
+
+$contentBgColor: var(--contentBgColor) !default;
+$contentAltBgColor: var(--contentAltBgColor) !default;
+$overlayContentBgColor: var(--overlayContentBgColor) !default;
+$dividerColor: var(--dividerColor) !default;
+$hoverBgColor: var(--hoverBgColor);
+$solidSurfaceTextColor: var(--solidSurfaceTextColor) !default;
+
+$menuTooltipBgColor: var(--menuTooltipBgColor) !default;
+$menuTooltipTextColor: var(--menuTooltipTextColor);
+
+$pink: var(--pink, #f06292) !default;
+$indigo: var(--indigo, #7986cb) !default;
+$yellow: var(--yellow, #ffd54f) !default;
+$orange: var(--orange, #ffb74d) !default;
+$teal: var(--teal, #4db6ac) !default;
+$cyan: var(--cyan, #4dd0e1) !default;
+$bluegrey: var(--bluegrey, #78909c) !default;
+$purple: var(--purple, #ba68c8) !default;
+$deeppurple: var(--deeppurple, #9575cd) !default;
+$blue: var(--blue, #64b5f6) !default;
+$lightblue: var(--lightblue, #03a9f4) !default;
+$green: var(--green, #81c784) !default;
+$lightgreen: var(--lightgreen, #8bc34a) !default;
+$lime: var(--lime, #dce775) !default;
+$deeporange: var(--deeporange, #ff8a65) !default;
+$brown: var(--brown, #a1887f) !default;
+
+$menuShadow: 0 3px 24px 0 rgba(0, 0, 0, 0.05);
+$submenuShadow: 0 3px 24px 0 rgba(0, 0, 0, 0.05);
+
+$fontSize: 14px !default;
+$fontFamily: var(--font-family) !default;
+$borderRadius: 5px !default;
+$animationDuration: 0.2s !default;
+$animationTimingFunction: cubic-bezier(0.05, 0.74, 0.2, 0.99) !default;
+$letterSpacing: normal !default;
+$transitionDuration: 0.2s !default;
+$mobileBreakpoint: 991px !default;
+$textColor: var(--textColor) !default;

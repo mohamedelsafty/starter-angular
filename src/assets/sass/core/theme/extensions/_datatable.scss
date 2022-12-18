@@ -1,0 +1,219 @@
+.p-datatable {
+  .p-sortable-column {
+    outline: 0 none;
+
+    &:focus {
+      background-color: rgba($overlayColor, 0.03);
+    }
+  }
+
+  .p-datatable-tbody {
+    > tr {
+      outline: 0 none;
+
+      &:not(.p-highlight):focus {
+        background-color: rgba($overlayColor, 0.03);
+      }
+    }
+  }
+}
+
+%flag {
+  width: 2.5ch;
+  min-width: 0;
+  padding: 0;
+  text-align: center;
+  flex-grow: 0;
+}
+
+@mixin table-responsive {
+  max-width: 100%;
+  height: auto;
+  overflow-x: auto;
+  @media screen and (max-width: $sm) {
+    width: auto !important;
+  }
+}
+.table-responsive {
+  @include table-responsive();
+}
+
+@media screen and (max-width: $xl) {
+  .table-xl-responsive {
+    @include table-responsive();
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .table-lg-responsive {
+    @include table-responsive();
+  }
+}
+@media screen and (max-width: $md) {
+  .table-md-responsive {
+    @include table-responsive();
+  }
+}
+@media screen and (max-width: $sm) {
+  .table-sm-responsive {
+    @include table-responsive();
+  }
+
+  .sticky-end {
+    max-width: 100% !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+.bg-table {
+  background: var(--dt-tr-bg, #fafafa);
+}
+.p-datatable-wrapper {
+  padding-left: 1px;
+  padding-right: 1px;
+  max-width: 100%;
+}
+.p-datatable {
+  &.table-responsive,
+  &.table-xl-responsive,
+  &.table-lg-responsive,
+  &.table-md-responsive,
+  &.table-sm-responsive {
+    table {
+      min-width: 100%;
+      width: auto;
+    }
+  }
+
+  tr {
+    > td.sticky-end {
+      overflow: hidden;
+      min-width: 0;
+      width: 0;
+      opacity: 0;
+    }
+    &:hover,
+    &[hover="true"] {
+      > td.sticky-end {
+        overflow: visible;
+        min-width: calc(var(--table-actions-width, 60px) * 0.8);
+        opacity: 1;
+      }
+    }
+  }
+  .p-sortable-column {
+    &:focus {
+      background-color: $dataTableOverlayColor;
+    }
+  }
+
+  .p-datatable-tbody {
+    > tr {
+      &:hover,
+      &[hover="true"] {
+        background-color: $dataTableOverlayColor;
+      }
+    }
+  }
+
+  .index-col {
+    width: var(--dt-index-width, 50px);
+    min-width: var(--dt-index-width, 50px);
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .col-flag {
+    @extend %flag;
+  }
+
+  .p-datatable-thead > tr > th,
+  .p-datatable-tbody > tr > td {
+    &.index-col {
+      width: var(--dt-index-width, 50px);
+      min-width: var(--dt-index-width, 50px);
+      text-align: center;
+      padding: 1rem 0;
+      flex-grow: 0;
+      justify-content: center;
+    }
+    &.col-flag {
+      @extend %flag;
+    }
+  }
+  th {
+    &,
+    * {
+      text-transform: uppercase;
+    }
+  }
+  th,
+  td {
+    white-space: nowrap;
+    &:not(.index-col):not(.sticky-end) {
+      min-width: var(--dt-td-width, 110px);
+      max-width: var(--dt-td-max-width, min(60vw, 450px));
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    input,
+    textarea {
+      color: var(--dt-th-color, #4a4a4a) !important;
+      opacity: 1 !important;
+    }
+  }
+  .p-column-title {
+    display: none;
+  }
+
+  .p-datatable-thead > tr > th {
+    color: var(--dt-th-color, #4a4a4a);
+    padding: var(--dt-th-padding, 1.3rem 0.5rem);
+    font-weight: 500;
+    &:first-child {
+      &.col-flag {
+        width: 30px;
+        min-width: 30px;
+        text-align: center;
+        padding: 1rem 0;
+      }
+    }
+  }
+
+  .p-datatable-tbody > tr {
+    background: var(--dt-tr-bg, #fafafa);
+    &.archivedRow {
+      background: var(--dt-tr-bg-archived, rgba(239, 239, 239, 0.75));
+      > td:not(.sticky-end) {
+        opacity: 0.8;
+      }
+    }
+    > td {
+      border-color: var(--dt-border-color, #e0deda);
+      &:first-child {
+        border-width: var(--dt-first-border-width, 0 0 1px 1px);
+        &.col-flag {
+          text-align: end;
+        }
+      }
+      &:last-child {
+        border-width: var(--dt-last-border-width, 0 1px 1px 0);
+      }
+      &:first-child:last-child {
+        border-width: 0 1px 1px 1px;
+      }
+    }
+  }
+
+  .p-inputtext.p-filled {
+    padding: 0;
+  }
+  .p-column-resizer {
+    display: none !important;
+  }
+
+  textarea {
+    resize: none !important;
+  }
+}

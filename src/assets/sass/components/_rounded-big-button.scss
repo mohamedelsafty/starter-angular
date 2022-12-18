@@ -1,0 +1,32 @@
+.rb {
+  &,
+  &.p-button.p-button-icon-only {
+    width: var(--rb-size, 80px);
+    height: var(--rb-size, 80px);
+    border-radius: 50%;
+  }
+
+  background: var(--rb-bg, #b1a16e);
+  border: var(--rb-border,4px solid  #fff);
+  box-shadow: var(--rb-shadow, 0 3px 12px 0 rgba(0, 0, 0, 0.1));
+  > * {
+    font-size: calc(var(--font-size, 1rem) + 0.5rem);
+  }
+  &--danger {
+    background: var(--rb-danger-bg, #bf7e7e);
+    &,
+    &.p-button-icon-only {
+      &:hover {
+        background: var(--rb-danger-bg, #bf7e7e);
+      }
+    }
+  }
+  &--small {
+    &,
+    &.p-button.p-button-icon-only {
+      font-size: calc(var(--font-size, 1rem) + 0.5rem);
+      width: var(--rb-small-size, 56px) ;
+      height: var(--rb-small-size, 56px);
+    }
+  }
+}

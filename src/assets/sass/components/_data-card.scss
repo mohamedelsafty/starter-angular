@@ -1,0 +1,46 @@
+@use '../variables' as *;
+.data-card {
+  display: flex;
+  border-radius: var(--radius, 8px);
+  border: solid 1px var(--a-b-color, #dbdbda) !important;
+  background-color: var(--a-b-bg, #f7f6f4);
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      color: var(--card-leading-color, #b1a16e);
+
+      * {
+        font-size: clamp(2rem, 2vw, 3rem);
+      }
+    }
+
+    h5 {
+      color: var(--a-h-t-color, #525252);
+    }
+
+    span:not([class]) {
+      color: var(--color-6e, #6e6e6e);
+      font-weight: light;
+    }
+  }
+
+  .btns-grp {
+    .p-divider-vertical {
+      height: 14px !important;
+    }
+  }
+}
+
+@media screen and  (max-width : $sm){
+  .data-card {
+      flex-direction: column;
+      .title-info{
+        justify-content: flex-end;
+        width: 100%;
+      }
+
+  }
+}

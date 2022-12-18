@@ -1,0 +1,66 @@
+@use "sass:map";
+
+@function mergeMaps($maps...) {
+  $collection: ();
+  @each $map in $maps {
+    $collection: map.merge($collection, $map);
+  }
+  @return $collection;
+}
+
+@mixin themMode($mode: "light", $maps...) {
+  $maps: mergeMaps($maps...);
+  @each $name, $color in $maps {
+    @if (map.has-key($color, $mode)) {
+      --#{"" + $name}: #{map.get($color, $mode)};
+    }
+  }
+}
+
+@function getColor($map, $mode: "light", $opacity: false) {
+  @if (map.has-key($map, $mode)) {
+    @if ($opacity) {
+      @return rgba(map.get($map, $mode), $opacity);
+    }
+    @return map.get($map, $mode);
+  }
+  @error "[#{$mode}] not found in #{inspect($map)} .";
+}
+
+@mixin componentBaseStyle(
+  $component,
+  $box: true,
+  $border: true,
+  $overrides: ()
+) {
+  $defaults: (
+    padding: 0,
+    margin: 0,
+    bStyle: solid,
+    bColor: transparent,
+    bWidth: 1px,
+  );
+
+  $options: map.merge($defaults, $overrides);
+
+  @if $box {
+    padding: var(--cp-#{$component}-padding, map.get($options, padding));
+    margin: var(--cp-#{$component}-margin, map.get($options, margin));
+  }
+  @if $border {
+    border: 1px
+      var(--cp-#{$component}-border-style, map.get($options, bStyle))
+      var(--cp-#{$component}-border-color, map.get($options, bColor));
+
+    border-width: var(
+      --cp-#{$component}-border-width,
+      map.get($options, bWidth)
+    );
+  }
+}
+
+@function hex2rgb($color, $separator: ',') {
+  @return unquote(
+    red($color) + $separator + green($color) + $separator + blue($color)
+  );
+}

@@ -1,0 +1,22 @@
+@import "./_menu_common";
+@import "./_menu_static";
+@import "./_menu_overlay";
+// @import "./_menu_horizontal";
+@import "./_menu_slim";
+@import "./_inline_menu";
+@import "./_menu_responsive";
+
+
+.layout-menu-gold,
+.layout-menu-dark {
+  $menuBgColor: var(--menu-bg-color);
+  $rootMenuTextColor: var(--root-menu-text-color);
+  $menuItemTextColor: var(--menu-item-text-color);
+  $menuItemHoverBgColor: var(--menuItemHoverBgColor);
+  $activeMenuItemTextColor: var(--primary-menu-text-color);
+  $activeMenuItemBgColor: var(--primary-lightest-color);
+
+  $inlineMenuBorderColor: var(--inlineMenuBorderColor);
+
+  @import "./_menu_theme";
+}

@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+.p-button.p-button-icon-only.p-button-rounded {
+  &.p-button-sm {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  &.p-button-xs {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.btn-bg {
+  &.p-button-danger {
+    background-color: rgba(211, 47, 47, 0.1) !important;
+    color: #d32f2f !important;
+    border: 0 !important;
+  }
+  &.p-button-primary {
+    background-color: rgba($primaryColor, 0.1);
+  }
+  &.p-button-plain,
+  &.p-button-secondary {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--btn-plain, rgba(0, 0, 0, 0.6));
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+      color: var(--btn-plain-hover, rgba(0, 0, 0, 0.8));
+    }
+  }
+}
+.btn-opacity {
+  opacity: 0.5 !important;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+.p-button-icon-left {
+  order: 0;
+}
+
+.p-button-icon-right {
+  order: 1;
+}

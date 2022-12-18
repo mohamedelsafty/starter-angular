@@ -1,0 +1,27 @@
+.layout-breadcrumb-container {
+  background-color: $contentBgColor;
+  height: var(--breadcrumb-height);
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: transparent;
+  padding: 0 calc((var(--spacing) + 1.5vw) - 0.75rem);
+  position: relative;
+  z-index: 1;
+
+  .layout-breadcrumb {
+    background: transparent;
+    border: 0 none;
+    border-radius: 0;
+  }
+
+  .layout-breadcrumb-buttons {
+    .p-button {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  .p-breadcrumb ul {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+}

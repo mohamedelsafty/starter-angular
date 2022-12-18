@@ -1,0 +1,34 @@
+.p-input-filled {
+  .p-multiselect {
+    &,
+    &:hover {
+      background-image: none !important;
+    }
+   /*  .p-multiselect-label {
+      padding: 6px var(--spacing);
+    } */
+  }
+
+  .p-multiselect-panel {
+    box-shadow: var(
+      --select-panel-shadow,
+      0 3px 32px 0 rgba(131, 131, 131, 0.15)
+    );
+    border-radius: var(--radius,8px);
+    padding: var(--spacing);
+    .p-multiselect-item {
+      &,
+      &.p-highlight {
+        color: currentColor;
+        background: transparent;
+        border-bottom: 1px solid var(--border-color, #f2f3f5);
+      }
+    }
+    .p-checkbox-box{
+        border-color:var(--border-color, #cccccc);
+        &.p-highlight{
+            border-color: var(--color-primary);
+        }
+    }
+  }
+}

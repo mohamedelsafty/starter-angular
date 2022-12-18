@@ -1,0 +1,23 @@
+@use "abstracts" as helpers;
+:root,
+.light-mode {
+  @include helpers.themMode(
+    "light",
+    $shared-colors,
+    $theme-colors,
+    $custom-colors
+  );
+   @for $i from 1 through length($chart-colors) {
+    $c: nth($chart-colors, $i);
+      --chart-color-#{$i} : #{$c};
+    }
+}
+
+.dark-mode {
+  @include helpers.themMode(
+    "dark",
+    $shared-colors,
+    $theme-colors,
+    $custom-colors
+  );
+}

@@ -1,0 +1,51 @@
+@use 'variables' as *;
+.searchBar {
+  grid-template-columns: 1fr auto;
+  &--bar {
+    min-width: var(--minwidth, 275px);
+  }
+}
+@media (max-width: #{$md - 1}) {
+  .searchBar {
+    --minwidth: 100%;
+    display: block !important;
+    &--bar {
+      margin-top: var(--spacing);
+    }
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+.search-bar {
+  background: var(--bg-white);
+  box-shadow: var(--search-bar-shadow, 0 2px 10px 0 rgba(0, 0, 0, 0.07));
+  > *,
+  .f-control {
+    border: 0;
+    background-image: unset;
+    min-height: var(--search-bar-min-height, 40px);
+    padding-top: 0;
+    padding-bottom: 0;
+    &::placeholder {
+      color: var(--placeholder-color, #b5b5b5);
+    }
+  }
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  &.inTab {
+    --search-bar-shadow: none;
+    --search-bar-min-height: 30px;
+    background: var(--tpl-form-bg, #ecebea);
+    .p-inputgroup-addon,
+    input {
+      background: transparent;
+    }
+    .p-button.p-button-text {
+      color: var(--emphasis-medium);
+    }
+  }
+}

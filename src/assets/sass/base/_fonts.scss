@@ -1,0 +1,88 @@
+@use "sass:math";
+/* roboto-regular - latin-ext_latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("/assets/fonts/roboto/roboto-v20-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    url("/assets/fonts/roboto/roboto-v20-latin-ext_latin-regular.woff")
+      format("woff");
+}
+/* roboto-500 - latin-ext_latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"),
+    url("/assets/fonts/roboto/roboto-v20-latin-ext_latin-500.woff2")
+      format("woff2"),
+    url("/assets/fonts/roboto/roboto-v20-latin-ext_latin-500.woff")
+      format("woff");
+}
+/* roboto-700 - latin-ext_latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url("/assets/fonts/roboto/roboto-v20-latin-ext_latin-700.woff2")
+      format("woff2"),
+    url("/assets/fonts/roboto/roboto-v20-latin-ext_latin-700.woff")
+      format("woff");
+}
+
+/* arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/tajawal/tajawal-light.woff2") format("woff2");
+}
+
+/* arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/tajawal/tajawal-regular.woff2") format("woff2");
+}
+
+/* arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/tajawal/tajawal-bold.woff2") format("woff2");
+}
+
+.f-ico {
+  font-family: "icomoon" !important;
+}
+
+.font-roboto {
+  font-family: "Roboto", var(--font-family);
+}
+.font-tajawal {
+  font-family: "Tajawal", var(--font-family);
+}
+.font-inherit {
+  font-family: inherit;
+}
+
+body * {
+  font-family: inherit;
+}
+
+$fontsSizes: 9 12 14 18;
+
+@each $size in $fontsSizes {
+  .fz-#{$size} {
+    font-size: #{math.div($size, 16) + 0rem};
+  }
+}

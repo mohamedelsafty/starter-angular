@@ -1,0 +1,40 @@
+.layout-menu-overlay  {
+  .menu-wrapper {
+    .layout-menu-container {
+      .layout-menu {
+        li {
+          &.layout-root-menuitem {
+            > a {
+              display: flex;
+              text-align: start;
+            }
+
+            > div {
+              display: none;
+            }
+          }
+
+          > ul {
+            li {
+              ul {
+                padding: 0 0 0.25rem;
+                overflow: hidden;
+              }
+            }
+
+            > li {
+              margin-top: 0.2rem;
+
+              &.layout-root-menuitem {
+                > a {
+                  display: flex;
+                  text-align: start;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

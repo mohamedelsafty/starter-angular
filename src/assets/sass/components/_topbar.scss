@@ -1,0 +1,97 @@
+@use "../variables/" as *;
+.layout-topbar-mobile-button {
+  color: #fff;
+}
+
+.layout-topbar {
+  box-shadow: var(--topbar-shadow);
+  .layout-search-panel {
+    background: var(--layout-search-panel-bg);
+  }
+  .layout-topbar-logo {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.layout-menu-icons,
+.layout-menu-slim {
+  .layout-topbar {
+    .org-name {
+      display: none;
+    }
+  }
+}
+.layout-menu-slim {
+  .layout-topbar-left {
+    width: var(--menu-slim-width, 4.5rem);
+    justify-content: center;
+    .layout-topbar-logo {
+      width: 100%;
+      padding: 0;
+    }
+    .layout-menu-button {
+      display: none;
+    }
+  }
+}
+
+.layout-topbar-item {
+  border-left: 1px solid var(--border-color);
+}
+
+@media (min-width: #{$mobileBreakpoint + 1}) {
+  .layout-topbar .layout-topbar-right {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: $mobileBreakpoint) {
+  .layout-topbar
+    .layout-topbar-right
+    .layout-topbar-actions-right
+    .layout-topbar-items {
+    justify-content: flex-end;
+  }
+}
+
+.layout-topbar {
+  .layout-topbar-right {
+    .layout-topbar-actions-right {
+      .layout-topbar-items {
+        .layout-topbar-item {
+          .layout-topbar-action-panel {
+            padding: 0;
+            position: absolute;
+            border-radius: var(--radius, 8px);
+            min-width: 14rem;
+            &.search-menu,
+            &.notification-menu {
+              right: 0;
+              min-width: 25rem;
+              left: auto;
+            }
+            .layout-topbar-action-item {
+              cursor: pointer;
+              padding: 1rem;
+              &:not(:last-child) {
+                border-bottom: 1px solid var(--border-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+[dir="rtl"] {
+  .layout-topbar {
+    --search-menu-right: 0;
+    --search-menu-left: auto;
+  }
+  .layout-topbar-item {
+    border-left: 0;
+    border-right: 1px solid var(--border-color);
+  }
+}

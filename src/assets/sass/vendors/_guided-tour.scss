@@ -1,0 +1,32 @@
+$tour-zindex: 9500 !default;
+$tour-step-color: #ffffff !default;
+$tour-text-color: #231f1f !default;
+$tour-next-button-color: var(--color-primary);
+$tour-next-button-hover: va(--color-active);
+$tour-back-button-color: var(--color-primary);
+$tour-next-text-color: #ffffff !default;
+$tour-next-text-hover: #ffffff !default;
+$tour-skip-link-color: #5e5e5e !default;
+$tour-orb-color: #625aff !default;
+$tour-shadow-color: rgba(0, 0, 0, 0.1);
+// @import "~ngx-guided-tour/scss/guided-tour-base-theme.scss";
+.tour-step {
+  .tour-content{
+    min-height: 40px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px ;
+  }
+  .tour-title {
+    margin: 10px 0;
+    padding-bottom: 0;
+  }
+  .tour-block {
+    border-radius: var(--border-radius, 6px);
+  }
+  .tour-buttons {
+    .next-button {
+      padding: 6px 12px;
+      border-radius: 3px !important;
+    }
+  }
+}

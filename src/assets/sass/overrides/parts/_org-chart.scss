@@ -1,0 +1,52 @@
+//PrimeNg org chart override style
+.p-organizationchart {
+  .p-organizationchart-node-content {
+    cursor: default;
+    padding: 0;
+    border: none;
+    background: unset;
+    color: unset;
+
+
+    &:hover {
+      background: unset !important;
+      color: unset !important;
+    }
+
+
+    .p-node-toggler {
+      //display: none;
+      bottom: -1.5rem;
+    }
+
+
+    &.p-highlight {
+      background: unset;
+      color: unset;
+      .p-node-toggler {
+        i{
+          color: unset;
+        }
+      }
+    }
+
+    .p-node-toggler-icon{
+      &.pi-chevron-down, &.pi-chevron-up{
+        transform: rotateZ(180deg);
+      }
+    }
+
+  }
+
+}
+
+//rtl style override
+:root[dir="rtl"]{
+  .p-organizationchart{
+    .p-organizationchart-line-left{
+      border-left: 1px solid var(--panelContentBorder);
+      border-right: none;
+    }
+  }
+}
+

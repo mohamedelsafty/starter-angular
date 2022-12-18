@@ -1,0 +1,22 @@
+.entity-actions {
+  ul {
+    list-style: none;
+    li {
+      font-size: 14px;
+      min-width: 110px;
+      color: var(--color-6e);
+      padding: 0.6rem 0;
+      cursor: pointer;
+      &:not(:last-child) {
+        border-bottom: 1px solid #d2d2d2;
+      }
+      &:hover {
+        background: var(--color-gray);
+      }
+    }
+    i {
+      margin: 0;
+      margin-inline-end: .4rem;
+    }
+  }
+}

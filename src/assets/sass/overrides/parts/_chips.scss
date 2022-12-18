@@ -1,0 +1,11 @@
+.p-chips {
+  &.filters-chips{
+    .p-chips-input-token{
+      padding: 0;
+    }
+  }
+}
+.p-chip.chip {
+  color: var(--chip-color , #fff);
+  background: var(--chip-background , #dee2e6);
+}

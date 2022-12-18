@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+$sizes: sm md lg xl;
+$classes: ();
+@each $size in $sizes {
+  @for $i from 1 through 12 {
+    $classes: join($classes, unquote(".p-#{$size}-#{$i}"), comma);
+  }
+}
+
+#{$classes} {
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+  

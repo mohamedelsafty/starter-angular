@@ -1,0 +1,31 @@
+/*
+  this fix for issue Sidebar Mask not being removed from DOM
+  https://github.com/primefaces/primevue/issues/1541
+*/
+.p-component-overlay-enter {
+    animation: p-component-overlay-enter-animation 150ms forwards;
+}
+
+.p-component-overlay-leave {
+    animation: p-component-overlay-leave-animation 150ms forwards;
+}
+
+.p-component-overlay {
+    @keyframes p-component-overlay-enter-animation {
+        from {
+            background-color: transparent;
+        }
+        to {
+            background-color: var(--maskbg , rgba(0, 0, 0, 0.4));
+        }
+    }
+
+    @keyframes p-component-overlay-leave-animation {
+        from {
+            background-color: var(--maskbg, rgba(0, 0, 0, 0.4));
+        }
+        to {
+            background-color: transparent;
+        }
+    }
+}

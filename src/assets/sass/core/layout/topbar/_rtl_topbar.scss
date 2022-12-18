@@ -1,0 +1,69 @@
+.layout-wrapper {
+  &.layout-rtl {
+    direction: rtl;
+
+    .layout-topbar {
+
+
+      .layout-topbar-left {
+        .layout-topbar-mobile-button {
+          margin: 0 auto 0 0.5rem;
+        }
+      }
+
+      .layout-topbar-right {
+        padding-left: 0;
+        padding-right: 2rem;
+
+        .layout-topbar-actions-right {
+          .layout-topbar-items {
+            .layout-topbar-item {
+              .layout-topbar-action-panel {
+                right: auto;
+                left: 0;
+                &.search-menu,
+                &.notification-menu {
+                  right: auto;
+                  left: 0;
+                }
+              }
+
+              &.layout-search-item {
+                .layout-search-panel {
+                  left: auto;
+                  right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      .layout-topbar {
+        .layout-topbar-right {
+          .layout-topbar-actions-left {
+            .layout-megamenu {
+              .p-megamenu-panel {
+                left: 1rem;
+                right: 1rem;
+              }
+            }
+          }
+
+          .layout-topbar-actions-right {
+            .layout-topbar-items {
+              .layout-topbar-item {
+                .layout-topbar-action-panel {
+                  left: 1em;
+                  right: 1em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

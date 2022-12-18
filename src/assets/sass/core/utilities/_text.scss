@@ -1,0 +1,50 @@
+@use 'variables' as *;
+[dir="rtl"] {
+  .p-text-left {
+    text-align: right !important;
+  }
+
+  .p-text-right {
+    text-align: left !important;
+  }
+
+  @media screen and (min-width: $sm) {
+    .p-text-sm-left {
+      text-align: right !important;
+    }
+
+    .p-text-sm-right {
+      text-align: left !important;
+    }
+  }
+
+  @media screen and (min-width: $md) {
+    .p-text-md-left {
+      text-align: right !important;
+    }
+
+    .p-text-md-right {
+      text-align: left !important;
+    }
+  }
+
+  @media screen and (min-width: $lg) {
+    .p-text-lg-left {
+      text-align: right !important;
+    }
+
+    .p-text-lg-right {
+      text-align: left !important;
+    }
+  }
+
+  @media screen and (min-width: $xl) {
+    .p-text-xl-left {
+      text-align: right !important;
+    }
+
+    .p-text-xl-right {
+      text-align: left !important;
+    }
+  }
+}

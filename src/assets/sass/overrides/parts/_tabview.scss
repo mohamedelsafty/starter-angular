@@ -1,0 +1,250 @@
+@use "variables" as *;
+
+@mixin TabsView(
+  $linkBg: var(--tab-link-bg, #ecebea),
+  $navbg: var(--tabview-nav-bg, transparent),
+  $linkColor: var(--tab-link-color, #999999),
+  $linkPadding: var(--tab-link-padding, var(--spacing) calc(var(--spacing) * 2)),
+  $linkActiveBg: var(--tab-link-bg-active, #fff),
+  $linkBorder: 0,
+  $linkActiveBorder: 0,
+  $linkActiveShadow: unset,
+  $linkActiveColor: var(--color-black, #000),
+  $linkFirstRadius: var(--first-radius),
+  $panelBg: var(--surface-f),
+  $panelRadius: 0 0 var(--radius) var(--radius),
+  $panelShadow:
+    var(--tab-panels-shadow, 12px 0 32px 0 rgba(136, 136, 136, 0.07)),
+  $hideInkBar: true,
+  $navItemPadding: 0,
+  $linkRadius: 0,
+  $navPadding: var(--tab-nav-padding, 0),
+  $navMaxWidth: var(--tab-nav-max-width, 100%),
+  $divider: 1,
+  $tabViewPanelPadding: 1rem,
+  $scroll: true
+) {
+  .p-tabview-title {
+    text-transform: capitalize;
+  }
+
+  .p-tabview-nav {
+    background: #{$navbg} !important ;
+    border-width: 0;
+    @if $scroll {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      max-width: $navMaxWidth;
+    }
+    padding: $navPadding;
+    flex-shrink: 0;
+    li {
+      padding: $navItemPadding;
+
+      .p-tabview-nav-link {
+        background: #{$linkBg};
+        color: #{$linkColor};
+        padding: #{$linkPadding};
+        white-space: nowrap;
+        position: relative;
+        border-radius: #{$linkRadius};
+        border: #{$linkBorder};
+      }
+
+      &.p-highlight {
+        .p-tabview-nav-link {
+          background: #{$linkActiveBg};
+          color: #{$linkActiveColor};
+          box-shadow: #{$linkActiveShadow};
+          border: #{$linkActiveBorder};
+
+          &::after {
+            --divider-bg: transparent;
+          }
+        }
+
+        [class*=" icon-"],
+        [class^="icon-"],
+        [class*="pi"] {
+          color: var(--color-primary);
+        }
+      }
+
+      &:first-child {
+        .p-tabview-nav-link {
+          border-radius: #{$linkFirstRadius};
+        }
+      }
+
+      &:not(:first-child):not(:nth-last-child(-n + 2)) {
+        .p-tabview-nav-link {
+          &::after {
+            content: none;
+            width: 2px;
+            height: 30%;
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+
+    @if $hideInkBar {
+      .p-tabview-ink-bar {
+        display: none;
+      }
+    }
+  }
+
+  .p-tabview-panels {
+    background-color: #{$panelBg};
+    border-radius: #{$panelRadius};
+    box-shadow: #{$panelShadow};
+    padding: $tabViewPanelPadding;
+  }
+
+  &.padding-zero {
+    .p-tabview-panels {
+      padding: 0;
+    }
+  }
+
+  &.padding-by-tab {
+    .p-tabview-panels {
+      padding: 0;
+    }
+    .p-tabview-panel {
+      padding: 1rem;
+    }
+
+    .p-tabview-panel-padding-zero {
+      .p-tabview-panel {
+        padding: 0 !important;
+      }
+    }
+  }
+}
+.p-tabview {
+  &.label-tabs {
+    --first-radius: var(--radius, 8px) 0 0 0;
+
+    @include TabsView();
+    &.bg-light-gray {
+      --tabview-nav-bg: var(--d-h-bg, #f8f7f3);
+    }
+    &.p-nx-1 {
+      --tab-nav-padding: 0 var(--spacing, 1rem);
+      --tab-nav-max-width: 100%;
+    }
+    &.p-nx-2 {
+      --tab-nav-padding: 0 2rem;
+      --tab-nav-max-width: 100%;
+    }
+  }
+  &.sidebar-tabs {
+    @include TabsView(
+      $linkPadding: calc(var(--spacing) * 0.6) var(--spacing),
+      $linkFirstRadius: 0,
+      $navPadding: 0,
+      $tabViewPanelPadding: 5px 0px 0px
+    );
+    .p-tabview-panel {
+      height: 100%;
+    }
+    .p-tabview-panels {
+      flex-grow: 1;
+      overflow: auto;
+    }
+    --pt-side-bg: var(--bodyBgColor);
+    --pt-side-shadow: none;
+  }
+
+  &.line-tabs {
+    --first-radius: var(--radius, 8px) 0 0 0;
+    @include TabsView(
+      $linkBg: rgba(0, 0, 0, 0.03),
+      $linkActiveBg: var(--color-ce, #ececec),
+      $panelBg: transparent,
+      $panelShadow: unset,
+      $hideInkBar: false
+    );
+  }
+  &.button-tabs {
+    @include TabsView(
+      $linkBg: transparent,
+      $linkActiveBg: var(--color-primary),
+      $linkActiveColor: var(--color-white),
+      $linkBorder: 1px solid var(--border-color, rgba(0, 0, 0, 0.2)),
+      $linkActiveBorder: 1px solid var(--rb-bg, rgba(0, 0, 0, 0.2)),
+      $panelBg: transparent,
+      $panelShadow: unset,
+      $hideInkBar: false,
+      $linkActiveShadow: 0 0 12px 1px rgba(0, 0, 0, 0),
+      $navItemPadding: 12px 6px,
+      $linkRadius: var(--radius, 8px),
+      $navPadding: 0 1rem,
+      $divider: 0,
+      $linkFirstRadius: var(--radius, 8px)
+    );
+    li {
+      a {
+        &:not(.active) {
+          color: var(--color-gray-b4, #b4b4b4);
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        &.active {
+          border: 1px solid inherit;
+        }
+      }
+    }
+  }
+
+  &.js-scroll {
+    .p-tabview-nav {
+      overflow-x: unset;
+      flex-wrap: unset;
+      max-width: none;
+    }
+    .p-tabview-nav-btn.p-link {
+      background: var(--tab-link-bg-active, #fff);
+      color: var(--tab-link-color, #999999);
+      width: 2.5rem;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      border-radius: 0;
+      &:focus {
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+  }
+}
+
+[dir="rtl"] {
+  .p-tabview.label-tabs {
+    --first-radius: 0 var(--radius, 8px) 0 0;
+  }
+  .p-tabview-nav {
+    li {
+      &:not(:first-child):not(:nth-last-child(-n + 2)) {
+        .p-tabview-nav-link {
+          &::after {
+            left: 0;
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$md - 1px}) {
+  .p-tabview.label-tabs,
+  .p-tabview.line-tabs {
+    .p-tabview-panels {
+      max-width: 100%;
+      overflow: auto;
+    }
+  }
+}

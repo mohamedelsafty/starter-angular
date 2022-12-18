@@ -1,0 +1,21 @@
+@use "sass:math";
+@use "variables/" as *;
+
+@media screen and (min-width: #{$xxl + 1px}) {
+  $classes: ();
+  @for $col from 1 through 12 {
+    $classes: join($classes, unquote(".p-xxl-#{$col}"), comma);
+    .p-xxl-#{$col} {
+      width: math.percentage(math.div($col, 12));
+    }
+    p-xxl-offset-#{$col} {
+      margin-left: math.percentage(math.div($col, 12));
+    }
+  }
+
+  #{$classes} {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+}

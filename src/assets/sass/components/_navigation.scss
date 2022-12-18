@@ -1,0 +1,28 @@
+.w_visual__widget__content:not(.fixedHeight) {
+  .nav_widget {
+    &__container--grid,
+    &__carousel--grid {
+      &:not(.only-item) {
+        --wn-aspect-ratio: 1/1.2;
+      }
+      &.only-item {
+        --nw-link-padding: calc(var(--spacing) * 2) var(--spacing);
+      }
+    }
+  }
+}
+
+.w_visual__widget__content.fixedHeight {
+  .nav_widget {
+    --nw-g-min-height: 0;
+    &__container--grid,
+    &__carousel--grid {
+      &:not(.only-item) {
+        --wn-aspect-ratio: auto;
+      }
+      &.only-item {
+        --nw-link-padding: calc(var(--spacing) * 2) var(--spacing);
+      }
+    }
+  }
+}

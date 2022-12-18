@@ -1,0 +1,37 @@
+.iti__flag {
+  background-image: url("/assets/images/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("/assets/images/flags@2x.png");
+  }
+}
+.countries-dropdown {
+  .p-dropdown-panel {
+    width: var(--flag-dropdown-width, 19em);
+    .p-dropdown-header {
+      padding: 0;
+    }
+  }
+  .p-dropdown-label {
+    padding: 0.9rem 0;
+  }
+  .p-dropdown-filter.p-inputtext {
+    width: 100%;
+  }
+  .p-dropdown-trigger {
+    width: auto;
+    span {
+      font-size: 0.5rem;
+    }
+  }
+  .p-dropdown-items li {
+    text-align: left;
+  }
+}
+
+/*
+ styleClass=""
+    panelStyleClass="countries-panel-dropdown"
+    */

@@ -1,0 +1,23 @@
+.confirmation-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--c-i-bg, #f7f6f4);
+  display: inline-grid;
+  place-items: center;
+  border: 5px solid var(--color-white, #fff);
+  box-shadow: 0 0 25px rgb(0 0 0 / 3%);
+  margin: var(--spacing);
+  > * {
+    font-size: 1.7rem;
+  }
+  &.text-danger {
+    background: var(--c-i--d-bg, #fdf3f3);
+    > * {
+      color: #be6060;
+    }
+  }
+   i[class*="icon-"]{
+     font-size: 2.3em;
+   }
+}

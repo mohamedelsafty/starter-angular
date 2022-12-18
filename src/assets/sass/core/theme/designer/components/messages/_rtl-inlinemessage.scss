@@ -1,0 +1,7 @@
+html[dir="rtl"] {
+    .p-inline-message-icon {
+        font-size: $inlineMessageIconFontSize;
+        margin-left: $inlineSpacing;
+        margin-right: none;
+    }
+}

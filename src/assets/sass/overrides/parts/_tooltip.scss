@@ -1,0 +1,18 @@
+.p-tooltip {
+  &.tooltip-primary {
+    .p-tooltip-text {
+      background-color: var(--color-primary);
+    }
+  }
+  &.rounded-0 {
+    .p-tooltip-text {
+      border-radius: 0;
+    }
+  }
+  &.max-30 {
+    max-width: 30%;
+  }
+  &.max-60vmin{
+    max-width: 60vmin;
+  }
+}

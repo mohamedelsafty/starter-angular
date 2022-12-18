@@ -1,0 +1,18 @@
+.p-galleria{
+  .p-galleria-content {
+    min-height: 80vh;
+    justify-content: space-between;
+  }
+  .p-galleria-thumbnail-container {
+    background: transparent;
+    .p-galleria-thumbnail-item {
+      overflow: visible;
+    }
+  }
+  .p-galleria-item{
+    img{
+      max-width: 100%;
+      max-height: 75vmin;
+    }
+  }
+}

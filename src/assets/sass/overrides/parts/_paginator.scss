@@ -1,0 +1,56 @@
+@use 'variables' as *;
+.p-paginator {
+  .p-input-filled .p-inputtext:not(.p-input-outlined) {
+    background-image: none;
+  }
+  .p-paginator-first,
+  .p-paginator-prev,
+  .p-paginator-next,
+  .p-paginator-last {
+    min-width: 2.5rem;
+    height: 2.5em;
+  }
+
+  .p-paginator-current {
+    margin-left: auto;
+  }
+
+  .p-paginator-last {
+    border-radius: 0 $borderRadius $borderRadius 0;
+  }
+  .p-paginator-first {
+    border-radius: $borderRadius 0 0 $borderRadius;
+  }
+}
+
+.with-paginator {
+  padding-bottom: calc(var(--paginator-height, 55px) + 15px);
+}
+.paginator {
+  min-height: var(--paginator-height, 55px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width:  100%;
+  border-radius : 0;
+  &.static{
+    position: static;
+    width: 100% !important;
+  }
+}
+
+// app-pagination"
+[dir="rtl"] {
+  .p-paginator {
+    .p-paginator-last {
+      border-radius: 50% 0 0 50%;
+    }
+    .p-paginator-first {
+      border-radius: 0 50% 50% 0;
+    }
+    .p-dropdown .p-dropdown-label {
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+  }
+}

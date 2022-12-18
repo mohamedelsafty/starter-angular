@@ -1,0 +1,18 @@
+@use "variables" as *;
+.filters-popup {
+  min-width: var(--mw, 730px);
+  &:not(.inDialog) {
+    max-width: 630px;
+  }
+  @media (max-width: #{$lg - 1}) {
+    --mw: 500px;
+  }
+
+  @media (max-width:#{ $md - 1}) {
+    --mw: 280px;
+    max-width: calc(100% - 1rem);
+  }
+}
+.filter-shadow {
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.16);
+}

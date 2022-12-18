@@ -1,0 +1,110 @@
+$layout-colors: (
+  bodyBgColor: (
+    "dark": #22252a,
+    "light": #f7f7f7,
+  ),
+  textColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": #212121,
+  ),
+  textSecondaryColor: (
+    "dark": rgba(255, 255, 255, 0.6),
+    "light": #616161,
+  ),
+  contentBgColor: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  contentAltBgColor: (
+    "dark": #262626,
+    "light": #eceff1,
+  ),
+  overlayContentBgColor: (
+    "dark": #262626,
+    "light": #ffffff,
+  ),
+  dividerColor: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": #e4e4e4,
+  ),
+  hoverBgColor: (
+    "dark": hsla(0, 0%, 100%, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  solidSurfaceTextColor: (
+    "dark": #121212,
+    "light": #ffffff,
+  ),
+  menuTooltipBgColor: (
+    "dark": #262626,
+    "light": #1c202c,
+  ),
+  menuTooltipTextColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": #ffffff,
+  ),
+  pink: (
+    "dark": #f06292,
+    "light": #e91e63,
+  ),
+  indigo: (
+    "dark": #7986cb,
+    "light": #3f51b5,
+  ),
+  yellow: (
+    "dark": #ffd54f,
+    "light": #ffc107,
+  ),
+  orange: (
+    "dark": #ffb74d,
+    "light": #ff9800,
+  ),
+  teal: (
+    "dark": #4db6ac,
+    "light": #009688,
+  ),
+  cyan: (
+    "dark": #4dd0e1,
+    "light": #00acc1,
+  ),
+  bluegrey: (
+    "dark": #78909c,
+    "light": #546e7a,
+  ),
+  purple: (
+    "dark": #ba68c8,
+    "light": #9c27b0,
+  ),
+  deeppurple: (
+    "dark": #9575cd,
+    "light": #673ab7,
+  ),
+  blue: (
+    "dark": #64b5f6,
+    "light": #2196f3,
+  ),
+  lightblue: (
+    "dark": #03a9f4,
+    "light": #03a9f4,
+  ),
+  green: (
+    "dark": #81c784,
+    "light": #4caf50,
+  ),
+  lightgreen: (
+    "dark": #8bc34a,
+    "light": #8bc34a,
+  ),
+  lime: (
+    "dark": #dce775,
+    "light": #cddc39,
+  ),
+  deeporange: (
+    "dark": #ff8a65,
+    "light": #ff5722,
+  ),
+  brown: (
+    "dark": #a1887f,
+    "light": #795548,
+  ),
+);

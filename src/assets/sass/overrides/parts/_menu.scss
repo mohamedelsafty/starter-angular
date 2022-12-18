@@ -1,0 +1,30 @@
+@use 'variables' as *;
+.p-menu {
+  width: auto;
+  padding: 0;
+  min-width: var(--menu-min-width, 11.5rem);
+  &.p-menu-overlay {
+    background: var(--p-menu-bg);
+    box-shadow: var(--p-menu-shadow);
+  }
+  .p-menuitem-link {
+    padding: var(--spacing);
+  }
+  .p-menuitem:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+[dir="rtl"] {
+  .p-menu {
+    --menu-min-width: 9rem;
+  }
+}
+@media (max-width: $sm) {
+  [dir="ltr"] {
+    .p-menu {
+      &.p-menu-overlay {
+        right: 4px;
+      }
+    }
+  }
+}

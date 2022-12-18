@@ -1,0 +1,93 @@
+.navigation-selector {
+  .p-checkbox-box {
+    box-shadow: 0 3px 5px rgb(0 0 0 / 15%);
+    border-radius: 0;
+    &.p-indeterminate {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+      color: var(--primaryTextColor);
+      .p-checkbox-icon {
+        color: var(--primaryTextColor);
+      }
+    }
+  }
+  .p-treenode {
+    &:not(.p-treenode-leaf) {
+      position: relative;
+      &:before,
+      &:after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:before {
+        height: 100%;
+        background-image: radial-gradient(
+          var(--color-gray-600, black) 1px,
+          transparent 0
+        );
+        background-size: 3px 2px;
+        background-repeat: repeat-y;
+        background-position-x: var(--bg-dot-b-pos, calc(2.6rem + 20px));
+      }
+
+      .p-treenode-content {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+  ul {
+    p-treenode {
+      &:first-of-type,
+      &:last-of-type {
+        > .p-treenode {
+          &:after {
+            height: 2rem;
+            z-index: 0;
+            background-image: linear-gradient(
+              var(--panelContentBg),
+              var(--panelContentBg)
+            );
+            background-position-x: var(--bg-dot-af-pos, 3.5rem);
+            background-repeat: no-repeat;
+          }
+        }
+      }
+      &:last-of-type {
+        > .p-treenode {
+          &:after {
+            top: unset;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+[dir="rtl"] {
+  .p-tree {
+    --bg-dot-b-pos: calc(100% - calc(2.6rem + 20px));
+    --bg-dot-af-pos: -3.5rem;
+    .p-treenode-children {
+      padding: 0 1rem 0 0;
+    }
+    .p-tree-container {
+      .p-treenode {
+        .p-treenode-content {
+          .p-checkbox,
+          .p-tree-toggler {
+            margin-left: 0.5rem;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.disabled-node {
+  opacity: 0.5;
+}

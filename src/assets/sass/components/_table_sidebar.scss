@@ -1,0 +1,131 @@
+@use "variables" as *;
+
+$width :400px;
+.toggle-btn {
+  position: absolute !important;
+  top: 2.2em;
+  background: var(--color-primary);
+  width: 24px !important;
+  height: 46px;
+  border: 0;
+  z-index: 2;
+  border-radius: 0;
+  transform: var(--sidebar-toggle-transform);
+  &.opened {
+    transform: var(--sidebar-toggle-transform-opened);
+    display: none;
+  }
+}
+
+
+
+.content-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  min-height:30vmin;
+}
+.sidebar-dashboard {
+  background: var(--sidebar-bg);
+  width: var(--sidebar-width, #{$width});
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  box-shadow: var(--sidebar-shadow, 7px 0 24px 0 rgba(0, 0, 0, 0.07));
+  transition: all 0.22s;
+  opacity: 0;
+  transform: translate(var(--sidebar-translate, -100%));
+  z-index: 2;
+  &.opened {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+.main-content {
+  transition: all 0.22s;
+  width: 100%;
+  z-index: 0;
+}
+
+
+.dashboard-wrapper{
+  height: 100%;
+  position: relative;
+}
+
+.dashboard-section {
+  overflow-y: auto;
+  height: 90%;
+}
+
+
+.selectors {
+  margin-top: calc(var(--spacing) * 1.3);
+  &__list {
+    &,
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+        ul{
+          padding:var(--spacing)  calc(var(--spacing) / 2 );
+        }
+      a {
+        font-weight: 300;
+        color: var(--card-secondary-color, #6e6e6e);
+        padding: 10px 12px;
+        display: block;
+        line-height: 24px;
+        text-transform: capitalize;
+        &:hover{
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    > li {
+      margin-top: 24px;
+      border-bottom: 1px solid var(--border-color);
+      > a {
+        padding:18px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color:var(--color-primary);
+        font-weight: 500;
+        font-size: 18px;
+      }
+      &.opened{
+         > a{
+              color: var(--color-black,#000);
+              border-bottom:1px solid var(--border-color);
+              .badge{
+                color: var(--color-primary);
+
+              }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 950px) {
+  .sort-but {
+    margin: 0px;
+  }
+}
+
+@media (max-width: $md) {
+  .toggle-btn {
+    top: 0 !important;
+    height: 36px !important;
+    z-index: 2 !important;
+  }
+}

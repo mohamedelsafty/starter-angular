@@ -1,0 +1,100 @@
+@use 'variables' as *;
+.dialog {
+  --dialog-header-radius: var(--d-h-r, 8px) !important;
+  &__header {
+    padding: var(--d-h-p, 1rem);
+    background: var(--d-h-bg, #f8f7f3);
+    display: flex;
+    border-radius: var(--d-h-r, 8px);
+  }
+  &__content {
+    padding: var(--d-c-p, 1rem);
+  }
+  &__footer {
+    padding: var(--d-f-p, 1rem);
+    border-top: 1px solid var(--border-color, #e3e3e3);
+    border-radius: var(--d-f-r, 0 0 8px 8px);
+  }
+
+  &__title {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    button.p-button {
+      width: 34px;
+      height: 34px;
+      color: var(--color-gray-200, #d2d2d2);
+    }
+    .title {
+      margin: 0.5rem 0 0 0;
+      font-size: 20px;
+      font-size: clamp(16px, 3vw, 20px);
+    }
+    .subtitle {
+      margin: 0;
+      grid-area: 2 / 2;
+      color: var(--color-ac, #acacac);
+    }
+  }
+
+  &__btn-actions {
+    &,
+    &:active,
+    &:focus {
+      background: var(--view-header-action-bg, #fff);
+      color: var(--view-header-action-color, #b1a16e);
+    }
+    box-shadow: 0;
+    border: 1px solid transparent;
+    margin: 0 var(--spacing);
+    &:active,
+    &:focus {
+      border-color: 1px solid var(--view-header-action-color, #b1a16e);
+    }
+  }
+
+  &__btn-primary {
+    padding-left: var(--btn-save-padding);
+    padding-right: var(--btn-save-padding);
+  }
+}
+
+@media (max-width: $md - 1px) {
+  .dialog {
+    --dialog-width: 95%;
+    &__header {
+      flex-direction: column;
+    }
+    &__title {
+      margin-bottom: var(--spacing, 1rem);
+    }
+  }
+}
+
+
+.d-sidebar {
+    &:not(.old-style){
+       &, .p-sidebar-content{
+          padding: 0;
+        }
+    }
+  .p-sidebar-content {
+    height:100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  &__header {
+    padding: var(--d-h-p, 1rem);
+    border-bottom: 1px solid var(--border-color, #e3e3e3);
+    position :sticky;
+  }
+  &__content {
+    padding: var(--d-c-p, 1rem);
+    overflow: auto;
+  }
+  &__footer {
+     position :sticky;
+    padding: var(--d-f-p, 1rem);
+    border-top: 1px solid var(--border-color, #e3e3e3);
+  }
+
+}

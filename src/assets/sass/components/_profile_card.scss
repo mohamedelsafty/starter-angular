@@ -1,0 +1,55 @@
+@use "variables" as *;
+.profile-d-grid {
+  grid-template-columns: 1fr auto;
+  align-items: flex-start;
+  position: relative;
+}
+.profile-list-info {
+  li {
+    margin-bottom: 1rem;
+    color: var(--card-secondary-color, #6e6e6e);
+    span {
+      margin: 0 0.2rem;
+    }
+  }
+
+  &.contacts-list {
+    li {
+      font-weight: light;
+      i {
+        background: var(--color-gray);
+        color: var(--color-primary);
+        border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        font-size: 12px;
+        display: inline-grid;
+        place-items: center;
+      }
+    }
+  }
+}
+
+.profile-brief {
+  color: var(--card-secondary-color, #6e6e6e);
+  max-width: 95%;
+  font-weight: light;
+}
+.profile-btn-edit {
+  font-size: clamp(16px, 4vw, 24px);
+}
+.profile-btn-more {
+  font-weight: normal;
+}
+
+@media (max-width: $md - 1) {
+  .profile-d-grid {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  .profile-btn-edit {
+    align-self: flex-end;
+    position: absolute;
+    top: 0;
+  }
+}

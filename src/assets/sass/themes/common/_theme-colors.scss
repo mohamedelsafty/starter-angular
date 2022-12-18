@@ -1,0 +1,949 @@
+@use "sass:map";
+@use 'abstracts/' as helpers;
+$infoButtonBgMap: (
+  "dark": #90caf9,
+  "light": #2196f3,
+);
+$successButtonBgMap: (
+  "dark": #c5e1a5,
+  "light": #689f38,
+);
+$warningButtonBgMap: (
+  "dark": #fff59d,
+  "light": #fbc02d,
+);
+$helpButtonBgMap: (
+  "dark": #ce93d8,
+  "light": #9c27b0,
+);
+
+$dangerButtonBgMap: (
+  "dark": #ef9a9a,
+  "light": #af4040,
+);
+
+$overlayColorMap: (
+  "dark": #ffffff,
+  "light": #000000,
+);
+
+$theme-colors: (
+  emphasis-high: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(0, 0, 0, 0.87),
+  ),
+  emphasis-medium: (
+    "dark": rgba(255, 255, 255, 0.6),
+    "light": rgba(0, 0, 0, 0.6),
+  ),
+  emphasis-low: (
+    "dark": rgba(255, 255, 255, 0.38),
+    "light": rgba(0, 0, 0, 0.38),
+  ),
+  emphasis-lower: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  overlayColor: $overlayColorMap,
+  maskBg: (
+    "dark": rgba(0, 0, 0, 0.32),
+    "light": rgba(0, 0, 0, 0.32),
+  ),
+  errorColor: (
+    "dark": #f44435,
+    "light": #b00020,
+  ),
+  successColor: (
+    "dark": #8ab16e,
+    "light": #8ab16e,
+  ),
+  dangerColor: (
+    "dark": #e30000,
+    "light": #e30000,
+  ),
+  actionIconHoverBg: (
+    "dark": #d1d1d1,
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  inputBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  inputBorder: (
+    "dark": hsla(0, 0%, 100%, 0.3),
+    "light": #f0f0f0,
+  ),
+  inputFilledBg: (
+    "dark": hsla(0, 0%, 100%, 0.00),
+    "light": transparent,
+  ),
+  inputFilledHoverBg: (
+    "dark": hsla(0, 0%, 100%, 0.08),
+    "light": transparent,
+  ),
+  inputFilledFocusBg: (
+    "dark": hsla(0, 0%, 100%, 0.1),
+    "light": transparent,
+  ),
+  inputListBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  inputListBorder: (
+    "dark": hsla(0, 0%, 100%, 0.3),
+    "light": #f0f0f0,
+  ),
+  inputListItemHoverBg: (
+    "dark": hsla(0, 0%, 100%, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  inputListHeaderBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  inputListHeaderBorder: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  inputOverlayBg: (
+    "dark": #2b2b2b,
+    "light": #ffffff,
+  ),
+  inputOverlayHeaderBg: (
+    "dark": #2b2b2b,
+    "light": #ffffff,
+  ),
+  buttonHoverBg: (
+    "dark": rgba($primaryColor, 0.92),
+    "light": rgba($primaryColor, 0.92),
+  ),
+  infoButtonBg: $infoButtonBgMap,
+  infoButtonTextColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  infoButtonHoverBg: (
+    "dark": rgba(#90caf9, 0.92),
+    "light": rgba(#2196f3, 0.92),
+  ),
+  infoButtonTextHoverColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  infoButtonActiveBg: (
+    "dark": rgba(#90caf9, 0.68),
+    "light": rgba(#2196f3, 0.68),
+  ),
+  infoButtonTextActiveColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  successButtonBg: $successButtonBgMap,
+  successButtonTextColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  successButtonHoverBg: (
+    "dark": rgba(#c5e1a5, 0.92),
+    "light": rgba(#689f38, 0.92),
+  ),
+  successButtonTextHoverColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  successButtonActiveBg: (
+    "dark": rgba(#c5e1a5, 0.68),
+    "light": rgba(#689f38, 0.68),
+  ),
+  successButtonTextActiveColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  warningButtonBg: $warningButtonBgMap,
+  warningButtonTextColor: (
+    "dark": #212121,
+    "light": #212529,
+  ),
+  warningButtonHoverBg: (
+    "dark": rgba(#fff59d, 0.92),
+    "light": rgba(#fbc02d, 0.92),
+  ),
+  warningButtonTextHoverColor: (
+    "dark": #212121,
+    "light": #212529,
+  ),
+  warningButtonActiveBg: (
+    "dark": rgba(#fff59d, 0.68),
+    "light": rgba(#fbc02d, 0.68),
+  ),
+  warningButtonTextActiveColor: (
+    "dark": #212121,
+    "light": #212529,
+  ),
+  helpButtonBg: $helpButtonBgMap,
+  helpButtonTextColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  helpButtonHoverBg: (
+    "dark": rgba(#ce93d8, 0.92),
+    "light": rgba(#9c27b0, 0.92),
+  ),
+  helpButtonTextHoverColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  helpButtonActiveBg: (
+    "dark": rgba(#ce93d8, 0.68),
+    "light": rgba(#9c27b0, 0.68),
+  ),
+  helpButtonTextActiveColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  dangerButtonBg: $dangerButtonBgMap,
+  dangerButtonTextColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  dangerButtonHoverBg: (
+    "dark": rgba(#ef9a9a, 0.92),
+    "light": rgba(#af4040, 0.92),
+  ),
+  dangerButtonTextHoverColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  dangerButtonActiveBg: (
+    "dark": rgba(#ef9a9a, 0.68),
+    "light": rgba(#af4040, 0.68),
+  ),
+  dangerButtonTextActiveColor: (
+    "dark": #212121,
+    "light": #ffffff,
+  ),
+  checkboxBorder: (
+    "dark": hsla(0, 0%, 100%, 0.7),
+    "light": #757575,
+  ),
+  radiobuttonBorder: (
+    "dark": hsla(0, 0%, 100%, 0.7),
+    "light": #757575,
+  ),
+  colorPickerBg: (
+    "dark": #2b2b2b,
+    "light": #323232,
+  ),
+  colorPickerBorderColor: (
+    "dark": #1e1e1e,
+    "light": #191919,
+  ),
+  colorPickerHandleColor: (
+    "dark": #ffffff,
+    "light": #ffffff,
+  ),
+  toggleButtonBg: (
+    "dark": #2f2f2f,
+    "light": #ffffff,
+  ),
+  toggleButtonBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  toggleButtonHoverBg: (
+    "dark": #373737,
+    "light": #f6f6f6,
+  ),
+  toggleButtonHoverBorderColor: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  toggleButtonActiveBg: (
+    "dark": #1c1c1c,
+    "light": #e0e0e1,
+  ),
+  toggleButtonActiveBorderColor: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e0e0e1,
+  ),
+  toggleButtonActiveHoverBg: (
+    "dark": #262626,
+    "light": #d9d8d9,
+  ),
+  toggleButtonActiveHoverBorderColor: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #d9d8d9,
+  ),
+  inplaceHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  ratingCancelIconColor: (
+    "dark": #f44435,
+    "light": #b00020,
+  ),
+  ratingCancelIconHoverColor: (
+    "dark": #f44435,
+    "light": #b00020,
+  ),
+  sliderBg: (
+    "dark": hsla(0, 0%, 100%, 0.3),
+    "light": #c1c1c1,
+  ),
+  calendarInlineBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  calendarInlineHeaderBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  calendarCellDateHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  calendarCellDateTodayBorderColor: (
+    "dark": rgba(255, 255, 255, 0.5),
+    "light": rgba(0, 0, 0, 12),
+  ),
+  inputSwitchSliderOffBg: (
+    "dark": hsla(0, 0%, 100%, 0.3),
+    "light": rgba(0, 0, 0, 0.38),
+  ),
+  inputSwitchHandleOffBg: (
+    "dark": #bdbdbd,
+    "light": #ffffff,
+  ),
+  inputSwitchSliderOffHoverBg: (
+    "dark": hsla(0, 0%, 100%, 0.3),
+    "light": rgba(0, 0, 0, 0.38),
+  ),
+  inputSwitchSliderOnBg: (
+    "dark": rgba($primaryColor, 0.5),
+    "light": rgba($primaryColor, 0.5),
+  ),
+  inputSwitchSliderOnHoverBg: (
+    "dark": rgba($primaryColor, 0.5),
+    "light": rgba($primaryColor, 0.5),
+  ),
+  panelHeaderBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e0e0e0,
+  ),
+  panelHeaderBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  panelHeaderHoverBg: (
+    "dark": rgba(#ffffff, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  panelHeaderHoverBorderColor: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e0e0e0,
+  ),
+  panelContentBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e0e0e0,
+  ),
+  panelContentBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  panelFooterBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e0e0e0,
+  ),
+  panelFooterBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  accordionHeaderBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  accordionHeaderHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": #f6f6f6,
+  ),
+  accordionHeaderFocusBg: (
+    "dark": darken(rgba(255, 255, 255, 0.04), 4%),
+    "light": darken(#f6f6f6, 4%),
+  ),
+  accordionHeaderActiveBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  accordionHeaderActiveHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": #ffffff,
+  ),
+  accordionContentBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  tabviewNavBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  tabviewHeaderHoverBg: (
+    "dark": rgba($primaryColor, 0.04),
+    "light": rgba($primaryColor, 0.04),
+  ),
+  tabviewHeaderActiveBg: (
+    "dark": transparent,
+    "light": #ffffff,
+  ),
+  tabviewContentBg: (
+    "dark": transparent,
+    "light": #ffffff,
+  ),
+  scrollPanelTrackBg: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  paginatorBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  paginatorBorder: (
+    "dark": #404040,
+    "light": #e4e4e4,
+  ),
+  paginatorElementHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  tableHeaderBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e4e4e4,
+  ),
+  tableHeaderBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  tableHeaderCellBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  tableHeaderCellBorder: (
+    "dark": #404040,
+    "light": #e4e4e4,
+  ),
+  tableHeaderCellHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  tableHeaderCellHighlightBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  tableHeaderCellHighlightHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  tableBodyRowBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  tableBodyRowEvenBg: (
+    "dark": rgba(255, 255, 255, 0.02),
+    "light": rgba(0, 0, 0, 0.02),
+  ),
+  tableBodyRowHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  tableBodyCellBorder: (
+    "dark": #404040,
+    "light": #e4e4e4,
+  ),
+  tableFooterCellBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  tableFooterBorder: (
+    "dark": #404040,
+    "light": #e4e4e4,
+  ),
+  tableFooterBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  dataViewListItemBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  timelineEventMarkerBackground: (
+    "dark": #bdbdbd,
+    "light": #bdbdbd,
+  ),
+  timelineEventColor: (
+    "dark": #bdbdbd,
+    "light": #bdbdbd,
+  ),
+  organizationChartConnectorColor: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  infoMessageBg: (
+    "dark": #b3e5fc,
+    "light": #b3e5fc,
+  ),
+  infoMessageTextColor: (
+    "dark": #01579b,
+    "light": #01579b,
+  ),
+  infoMessageIconColor: (
+    "dark": #01579b,
+    "light": #01579b,
+  ),
+  successMessageBg: (
+    "dark": #c8e6c9,
+    "light": #c8e6c9,
+  ),
+  successMessageTextColor: (
+    "dark": #1b5e20,
+    "light": #1b5e20,
+  ),
+  successMessageIconColor: (
+    "dark": #1b5e20,
+    "light": #1b5e20,
+  ),
+  warningMessageBg: (
+    "dark": #ffecb3,
+    "light": #ffecb3,
+  ),
+  warningMessageTextColor: (
+    "dark": #7f6003,
+    "light": #7f6003,
+  ),
+  warningMessageIconColor: (
+    "dark": #7f6003,
+    "light": #7f6003,
+  ),
+  errorMessageBg: (
+    "dark": #ffcdd2,
+    "light": #ffcdd2,
+  ),
+  errorMessageTextColor: (
+    "dark": #b71c1c,
+    "light": #b71c1c,
+  ),
+  errorMessageIconColor: (
+    "dark": #b71c1c,
+    "light": #b71c1c,
+  ),
+  overlayContentBg: (
+    "dark": #262626,
+    "light": #ffffff,
+  ),
+  tooltipBg: (
+    "dark": #444444,
+    "light": rgba(97, 97, 97, 0.9),
+  ),
+  tooltipText: (
+    "dark": #d1d1d1,
+    "light": #ffffff,
+  ),
+  progressBarBg: (
+    "dark": rgba($primaryColor, 0.32),
+    "light": rgba($primaryColor, 0.32),
+  ),
+  menuBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  menuBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e5e5e5,
+  ),
+  menuitemHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  menuitemActiveBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  overlayMenuBg: (
+    "dark": #2b2b2b,
+    "light": #ffffff,
+  ),
+  breadcrumbBg: (
+    "dark": #1e1e1e,
+    "light": #ffffff,
+  ),
+  breadcrumbBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e5e5e5,
+  ),
+  horizontalMenuBg: (
+    "dark": #1e1e1e,
+    "light": transparent,
+  ),
+  horizontalMenuBorder: (
+    "dark": rgba(255, 255, 255, 0.12),
+    "light": #e5e5e5,
+  ),
+  horizontalMenuRootMenuitemHoverBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  horizontalMenuRootMenuitemActiveBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  carouselIndicatorBg: (
+    "dark": rgba(255, 255, 255, 0.3),
+    "light": #dcdcdc,
+  ),
+  carouselIndicatorHoverBg: (
+    "dark": rgba(255, 255, 255, 0.6),
+    "light": #ececec,
+  ),
+  galleriaMaskBg: (
+    "dark": rgba(0, 0, 0, 0.9),
+    "light": rgba(0, 0, 0, 0.9),
+  ),
+  galleriaCloseIconColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(255, 255, 255, 0.87),
+  ),
+  galleriaCloseIconHoverBg: (
+    "dark": rgba(255, 255, 255, 0.1),
+    "light": rgba(255, 255, 255, 0.1),
+  ),
+  galleriaCloseIconHoverColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(255, 255, 255, 0.87),
+  ),
+  galleriaItemNavigatorColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": #f6f6f6,
+  ),
+  galleriaItemNavigatorHoverBg: (
+    "dark": rgba(255, 255, 255, 0.1),
+    "light": rgba(255, 255, 255, 0.1),
+  ),
+  galleriaItemNavigatorHoverColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(255, 255, 255, 0.87),
+  ),
+  galleriaCaptionBg: (
+    "dark": rgba(0, 0, 0, 0.5),
+    "light": rgba(0, 0, 0, 0.5),
+  ),
+  galleriaCaptionTextColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(255, 255, 255, 0.87),
+  ),
+  galleriaIndicatorBg: (
+    "dark": rgba(255, 255, 255, 0.3),
+    "light": #dcdcdc,
+  ),
+  galleriaIndicatorHoverBg: (
+    "dark": rgba(255, 255, 255, 0.6),
+    "light": #ececec,
+  ),
+  galleriaIndicatorsBgOnItem: (
+    "dark": rgba(0, 0, 0, 0.5),
+    "light": rgba(0, 0, 0, 0.5),
+  ),
+  galleriaIndicatorBgOnItem: (
+    "dark": rgba(255, 255, 255, 0.3),
+    "light": rgba(255, 255, 255, 0.4),
+  ),
+  galleriaIndicatorHoverBgOnItem: (
+    "dark": rgba(255, 255, 255, 0.6),
+    "light": rgba(255, 255, 255, 0.6),
+  ),
+  galleriaThumbnailContainerBg: (
+    "dark": rgba(0, 0, 0, 0.9),
+    "light": rgba(0, 0, 0, 0.9),
+  ),
+  galleriaThumbnailNavigatorColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(255, 255, 255, 0.87),
+  ),
+  galleriaThumbnailNavigatorHoverBg: (
+    "dark": rgba(255, 255, 255, 0.1),
+    "light": rgba(255, 255, 255, 0.1),
+  ),
+  galleriaThumbnailNavigatorHoverColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": rgba(255, 255, 255, 0.87),
+  ),
+  dividerColor: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  avatarBg: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  chipBg: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  skeletonBg: (
+    "dark": rgba(255, 255, 255, 0.06),
+    "light": rgba(0, 0, 0, 0.08),
+  ),
+  skeletonAnimationBg: (
+    "dark": rgba(255, 255, 255, 0.04),
+    "light": rgba(255, 255, 255, 0.4),
+  ),
+  splitterGutterBg: (
+    "dark": hsla(0, 0%, 100%, 0.04),
+    "light": rgba(0, 0, 0, 0.04),
+  ),
+  splitterGutterHandleBg: (
+    "dark": hsla(0, 0%, 100%, 0.12),
+    "light": rgba(0, 0, 0, 0.12),
+  ),
+  primaryTextColor: (
+    "dark": #212121,
+    "light": #fff,
+  ),
+  textColor: (
+    "dark": rgba(255, 255, 255, 0.87),
+    "light": #212121,
+  ),
+  scrollTopHoverBg: (
+    "dark": rgba($accentColor, 0.92),
+    "light": rgba($accentColor, 0.92),
+  ),
+  secondaryButtonHoverBg: (
+    "dark": rgba($accentColor, 0.92),
+    "light": rgba($accentColor, 0.92),
+  ),
+  secondaryButtonActiveBg: (
+    "dark": rgba($accentColor, 0.68),
+    "light": rgba($accentColor, 0.68),
+  ),
+  divider-color: (
+    "dark": var(--dividerColor),
+    "light": var(--dividerColor),
+  ),
+  buttonHover: (
+    "dark": rgba($primaryColor, $textButtonHoverBgOpacity),
+    "light": rgba($primaryColor, $textButtonHoverBgOpacity),
+  ),
+  buttonActive: (
+    "dark": rgba($primaryColor, $textButtonActiveBgOpacity),
+    "light": rgba($primaryColor, $textButtonActiveBgOpacity),
+  ),
+  infoButtonHover: (
+    "dark":
+      helpers.getColor($infoButtonBgMap, "dark", $textButtonHoverBgOpacity),
+    "light":
+      helpers.getColor($infoButtonBgMap, "light", $textButtonHoverBgOpacity),
+  ),
+  infoButtonActive: (
+    "dark":
+      helpers.getColor($infoButtonBgMap, "dark", $textButtonActiveBgOpacity),
+    "light":
+      helpers.getColor($infoButtonBgMap, "light", $textButtonActiveBgOpacity),
+  ),
+  successButtonHover: (
+    "dark":
+      helpers.getColor($successButtonBgMap, "dark", $textButtonHoverBgOpacity),
+    "light":
+      helpers.getColor($successButtonBgMap, "light", $textButtonHoverBgOpacity),
+  ),
+  successButtonActive: (
+    "dark":
+      helpers.getColor($successButtonBgMap, "dark", $textButtonActiveBgOpacity),
+    "light":
+      helpers.getColor($successButtonBgMap, "light", $textButtonActiveBgOpacity),
+  ),
+  warningButtonHover: (
+    "dark":
+      helpers.getColor($warningButtonBgMap, "dark", $textButtonHoverBgOpacity),
+    "light":
+      helpers.getColor($warningButtonBgMap, "light", $textButtonHoverBgOpacity),
+  ),
+  warningButtonActive: (
+    "dark":
+      helpers.getColor($warningButtonBgMap, "dark", $textButtonActiveBgOpacity),
+    "light":
+      helpers.getColor($warningButtonBgMap, "light", $textButtonActiveBgOpacity),
+  ),
+  helpButtonHover: (
+    "dark":
+      helpers.getColor($helpButtonBgMap, "dark", $textButtonHoverBgOpacity),
+    "light":
+      helpers.getColor($helpButtonBgMap, "light", $textButtonHoverBgOpacity),
+  ),
+  helpButtonActive: (
+    "dark":
+      helpers.getColor($helpButtonBgMap, "dark", $textButtonActiveBgOpacity),
+    "light":
+      helpers.getColor($helpButtonBgMap, "light", $textButtonActiveBgOpacity),
+  ),
+  dangerButtonHover: (
+    "dark":
+      helpers.getColor($dangerButtonBgMap, "dark", $textButtonActiveBgOpacity),
+    "light":
+      helpers.getColor($dangerButtonBgMap, "light", $textButtonHoverBgOpacity),
+  ),
+  dangerButtonActive: (
+    "dark":
+      helpers.getColor($dangerButtonBgMap, "dark", $textButtonActiveBgOpacity),
+    "light":
+      helpers.getColor($dangerButtonBgMap, "light", $textButtonActiveBgOpacity),
+  ),
+  buttonThemeFocus: (
+    "dark": rgba($primaryColor, 0.76),
+    "light": rgba($primaryColor, 0.76),
+  ),
+  buttonThemeActive: (
+    "dark": rgba($primaryColor, 0.68),
+    "light": rgba($primaryColor, 0.68),
+  ),
+  buttonOutlinedFocus: (
+    "dark": rgba($primaryColor, 0.12),
+    "light": rgba($primaryColor, 0.12),
+  ),
+  buttonOutlinedActive: (
+    "dark": rgba($primaryColor, 0.16),
+    "light": rgba($primaryColor, 0.16),
+  ),
+  secondaryButtonFocus: (
+    "dark": rgba($secondaryButtonBg, 0.76),
+    "light": rgba($secondaryButtonBg, 0.76),
+  ),
+  secondaryButtonActive: (
+    "dark": rgba($secondaryButtonBg, 0.68),
+    "light": rgba($secondaryButtonBg, 0.68),
+  ),
+  secondaryButtonOutlinedFocus: (
+    "dark": rgba($secondaryButtonBg, 0.12),
+    "light": rgba($secondaryButtonBg, 0.12),
+  ),
+  secondaryButtonOutlinedActive: (
+    "dark": rgba($secondaryButtonBg, 0.16),
+    "light": rgba($secondaryButtonBg, 0.16),
+  ),
+  infoButtonThemeFocus: (
+    "dark": helpers.getColor($infoButtonBgMap, "dark", 0.76),
+    "light": helpers.getColor($infoButtonBgMap, "light", 0.76),
+  ),
+  infoButtonThemeActive: (
+    "dark": helpers.getColor($infoButtonBgMap, "dark", 0.68),
+    "light": helpers.getColor($infoButtonBgMap, "light", 0.68),
+  ),
+  infoButtonOutlinedFocus: (
+    "dark": helpers.getColor($infoButtonBgMap, "dark", 0.12),
+    "light": helpers.getColor($infoButtonBgMap, "light", 0.12),
+  ),
+  infoButtonOutlinedActive: (
+    "dark": helpers.getColor($infoButtonBgMap, "dark", 0.16),
+    "light": helpers.getColor($infoButtonBgMap, "light", 0.16),
+  ),
+  successButtonThemeFocus: (
+    "dark": helpers.getColor($successButtonBgMap, "dark", 0.76),
+    "light": helpers.getColor($successButtonBgMap, "light", 0.76),
+  ),
+  successButtonThemeActive: (
+    "dark": helpers.getColor($successButtonBgMap, "dark", 0.68),
+    "light": helpers.getColor($successButtonBgMap, "light", 0.68),
+  ),
+  successButtonOutlinedFocus: (
+    "dark": helpers.getColor($successButtonBgMap, "dark", 0.12),
+    "light": helpers.getColor($successButtonBgMap, "light", 0.12),
+  ),
+  successButtonOutlinedActive: (
+    "dark": helpers.getColor($successButtonBgMap, "dark", 0.16),
+    "light": helpers.getColor($successButtonBgMap, "light", 0.16),
+  ),
+  warningButtonThemeFocus: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.76),
+    "light": helpers.getColor($warningButtonBgMap, "light", 0.76),
+  ),
+  warningButtonThemeActive: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.68),
+    "light": helpers.getColor($warningButtonBgMap, "light", 0.68),
+  ),
+  warningButtonOutlinedFocus: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.12),
+    "light": helpers.getColor($warningButtonBgMap, "light", 0.12),
+  ),
+  warningButtonOutlinedActive: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.16),
+    "light": helpers.getColor($warningButtonBgMap, "light", 0.16),
+  ),
+  helpButtonThemeFocus: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.76),
+    "light": helpers.getColor($helpButtonBgMap, "light", 0.76),
+  ),
+  helpButtonThemeActive: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.68),
+    "light": helpers.getColor($helpButtonBgMap, "light", 0.68),
+  ),
+  helpButtonOutlinedFocus: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.12),
+    "light": helpers.getColor($helpButtonBgMap, "light", 0.12),
+  ),
+  helpButtonOutlinedActive: (
+    "dark": helpers.getColor($warningButtonBgMap, "dark", 0.16),
+    "light": helpers.getColor($helpButtonBgMap, "light", 0.16),
+  ),
+  dangerButtonThemeFocus: (
+    "dark": helpers.getColor($dangerButtonBgMap, "dark", 0.76),
+    "light": helpers.getColor($dangerButtonBgMap, "light", 0.76),
+  ),
+  dangerButtonThemeActive: (
+    "dark": helpers.getColor($dangerButtonBgMap, "dark", 0.68),
+    "light": helpers.getColor($dangerButtonBgMap, "light", 0.68),
+  ),
+  dangerButtonOutlinedFocus: (
+    "dark": helpers.getColor($dangerButtonBgMap, "dark", 0.12),
+    "light": helpers.getColor($dangerButtonBgMap, "light", 0.12),
+  ),
+  dangerButtonOutlinedActive: (
+    "dark": helpers.getColor($dangerButtonBgMap, "dark", 0.16),
+    "light": helpers.getColor($dangerButtonBgMap, "light", 0.16),
+  ),
+  calendarOverlayColorHover: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.04),
+    "light": helpers.getColor($overlayColorMap, "light", 0.04),
+  ),
+  calendarOverlayColorActive: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.12),
+    "light": helpers.getColor($overlayColorMap, "light", 0.12),
+  ),
+  calendarOverlayColorToday: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.38),
+    "light": helpers.getColor($overlayColorMap, "light", 0.38),
+  ),
+  dataTableOverlayColor: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.06),
+    "light": helpers.getColor($overlayColorMap, "light", 0.06),
+  ),
+  overlayColor-2: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.02),
+    "light": helpers.getColor($overlayColorMap, "light", 0.02),
+  ),
+  overlayColor-3: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.03),
+    "light": helpers.getColor($overlayColorMap, "light", 0.03),
+  ),
+  overlayColor-4: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.04),
+    "light": helpers.getColor($overlayColorMap, "light", 0.04),
+  ),
+  overlayColor-12: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.12),
+    "light": helpers.getColor($overlayColorMap, "light", 0.12),
+  ),
+  overlayColor-14: (
+    "dark": helpers.getColor($overlayColorMap, "dark", 0.14),
+    "light": helpers.getColor($overlayColorMap, "light", 0.14),
+  ),
+  primaryColorRGB: (
+    "dark": helpers.hex2rgb($primaryColor),
+    "light": helpers.hex2rgb($primaryColor),
+  )
+);

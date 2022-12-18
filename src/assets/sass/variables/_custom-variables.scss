@@ -1,0 +1,73 @@
+
+$sm: 576px !default;
+$md: 960px !default;
+$lg: 992px !default;
+$xl: 1200px !default;
+$xxl: 1440px !default;
+$xxxl : 1600px !default;
+$gutter: 1rem ;
+
+$fieldMargin: 1rem !default;
+$fieldLabelMargin: 0.5rem !default;
+$helperTextMargin: 0.25rem !default;
+$spacer: 1rem !default;
+
+$root-variables: (
+  view-header-shadow: (
+    "dark": 0 6px 20px 0 rgba(0, 0, 0, 0.07),
+    "light": 0 6px 20px 0 rgba(0, 0, 0, 0.07),
+  ),
+  view-header-action-shadow: (
+    "dark": 0 3px 20px 0 rgba(0, 0, 0, 0.07),
+    "light": 0 3px 20px 0 rgba(0, 0, 0, 0.07),
+  ),
+  sidebar-shadow:
+  (
+    "dark": 7px 0 24px 0 rgba(0, 0, 0, 0.07),
+    "light": 7px 0 24px 0 rgba(0, 0, 0, 0.07),
+  ),
+  topbar-shadow: (
+    "dark": 0 3px 24px 0 rgba(0, 0, 0, 0.1),
+    "light": 0 3px 24px 0 rgba(0, 0, 0, 0.05),
+  ),
+  p-menu-shadow: (
+    "dark": 0 3px 32px 0 rgba(0, 0, 0, 0.1),
+    "light": 0 3px 32px 0 rgba(131, 131, 131, 0.2),
+  ),
+  card-shadow: (
+    "dark": 0 18px 32px 0 rgba(0, 0, 0, 0.1),
+    "light": 0 15px 32px 1px rgba(136, 136, 136, 0.3),
+  ),
+  card-overlay-shadow: (
+    "dark": 0 3px 32px rgba(0, 0, 0, 0.1),
+    "light": 0 3px 32px 0 rgba(131, 131, 131, 0.2),
+  ),
+  search-bar-shadow: (
+    "dark": 0 2px 10px 0 rgba(0, 0, 0, 0.01),
+    "light": 0 2px 10px 0 rgba(0, 0, 0, 0.07),
+  ),
+  rb-shadow: (
+    "dark": 0 3px 12px 0 rgba(0, 0, 0, 0.1),
+    "light": 0 3px 12px 0 rgba(0, 0, 0, 0.1),
+  ),
+  rb-border: (
+    "dark": 4px solid var(--color-1e),
+    "light": 4px solid #fff,
+  ),
+  overlay-shadow: (
+    "dark": 0 3px 32px 0 rgba(0, 0, 0, 0.1),
+  ),
+  card-type-icon-shadow: (
+    "dark": 0 6px 24px 0 rgba(0, 0, 0, 0.01),
+  ),
+  tab-panels-shadow: (
+    "dark": 0px 1px 12px 1px rgba(0, 0, 0, 0.1),
+  ),
+  ei-shadow: (
+    "dark": 0px 1px 12px 1px rgba(0, 0, 0, 0.1),
+  ),
+  post-shadow:(
+    "light": 0 4px 32px 0 rgb(136 136 136 / 20%),
+    "dark": 0px 1px 12px 1px rgba(0, 0, 0, 0.1),
+  )
+);

@@ -1,0 +1,236 @@
+.p-button {
+  font-weight: 500;
+  min-width: 4rem;
+
+  &.p-button-icon-only {
+    min-width: auto;
+  }
+
+  &:enabled:focus {
+    background: $buttonThemeFocus;
+  }
+
+  &:enabled:active {
+    background: $buttonThemeActive;
+  }
+
+  .p-ink {
+    background-color: rgba(255, 255, 255, 0.32);
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $buttonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $buttonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $buttonOutlinedActive;
+    }
+  }
+
+  &:disabled {
+    background-color: $emphasis-lower !important;
+    color: $emphasis-low !important;
+    opacity: 1;
+
+    &.p-button-text {
+      background-color: transparent !important;
+      color: $emphasis-low !important;
+    }
+
+    &.p-button-outlined {
+      background-color: transparent !important;
+      color: $emphasis-low !important;
+      border-color: $emphasis-low !important;
+    }
+  }
+
+  &.p-button-raised:enabled:focus {
+    box-shadow: $raisedButtonShadow;
+  }
+}
+
+.p-button.p-button-secondary,
+.p-buttonset.p-button-secondary > .p-button,
+.p-splitbutton.p-button-secondary > .p-button {
+  &:enabled:focus {
+    background: $secondaryButtonFocus;
+  }
+
+  &:enabled:active {
+    background: $secondaryButtonActive;
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $secondaryButtonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $secondaryButtonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $secondaryButtonOutlinedActive;
+    }
+  }
+}
+
+.p-button.p-button-info,
+.p-buttonset.p-button-info > .p-button,
+.p-splitbutton.p-button-info > .p-button {
+  &:enabled:focus {
+    background: $infoButtonThemeFocus;
+  }
+
+  &:enabled:active {
+    background: $infoButtonThemeActive;
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $infoButtonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $infoButtonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $infoButtonOutlinedActive;
+    }
+  }
+}
+
+.p-button.p-button-success,
+.p-buttonset.p-button-success > .p-button,
+.p-splitbutton.p-button-success > .p-button {
+  &:enabled:focus {
+    background: $successButtonThemeFocus;
+  }
+
+  &:enabled:active {
+    background: $successButtonThemeActive;
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $successButtonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $successButtonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $successButtonOutlinedActive;
+    }
+  }
+}
+
+.p-button.p-button-warning,
+.p-buttonset.p-button-warning > .p-button,
+.p-splitbutton.p-button-warning > .p-button {
+  &:enabled:focus {
+    background: $warningButtonThemeFocus;
+  }
+
+  &:enabled:active {
+    background: $warningButtonThemeActive;
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $warningButtonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $warningButtonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $warningButtonOutlinedActive;
+    }
+  }
+}
+
+.p-button.p-button-help,
+.p-buttonset.p-button-help > .p-button,
+.p-splitbutton.p-button-help > .p-button {
+  &:enabled:focus {
+    background: $helpButtonThemeFocus;
+  }
+
+  &:enabled:active {
+    background: $helpButtonThemeActive;
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $helpButtonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $helpButtonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $helpButtonOutlinedActive;
+    }
+  }
+}
+
+.p-button.p-button-danger,
+.p-buttonset.p-button-danger > .p-button,
+.p-splitbutton.p-button-danger > .p-button {
+  &:enabled:focus {
+    background: $dangerButtonThemeFocus;
+  }
+
+  &:enabled:active {
+    background: $dangerButtonThemeActive;
+  }
+
+  &.p-button-text,
+  &.p-button-outlined {
+    &:enabled:focus {
+      background: $dangerButtonOutlinedFocus;
+    }
+
+    &:enabled:active {
+      background: $dangerButtonOutlinedActive;
+    }
+
+    .p-ink {
+      background-color: $dangerButtonOutlinedActive;
+    }
+  }
+}
+@media (min-width: #{$xxl}) {
+  .btn-padding-xxl {
+    padding: 0.714rem 2rem;
+  }
+}
+@media (min-width: #{$xxxl}) {
+  .btn-padding-xxxl {
+    padding: 0.714rem 2.5rem;
+  }
+}
+
+@media (max-width: #{$xl}) {
+  [class*="btn-padding-"] {
+    .p-button-label {
+      white-space: nowrap;
+    }
+  }
+}

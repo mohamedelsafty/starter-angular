@@ -1,0 +1,115 @@
+@use "variables" as *;
+.p-dropdown {
+  .p-dropdown-clear-icon {
+    right: 3rem;
+  }
+  &.w-auto {
+    width: auto;
+  }
+  &.p-p-sm {
+    .p-dropdown-label {
+      padding: 0.7rem;
+    }
+  }
+  &.p-px-lg {
+    .p-dropdown-label {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  &.icomoon {
+    .pi-chevron-down {
+      &:before {
+        font-size: 9px;
+        content: "\e915";
+        font-family: "icomoon" !important;
+      }
+    }
+  }
+  &.radius {
+    .p-dropdown-label {
+      border-radius: var(--label-radius, 5px 0 0 5px) !important;
+    }
+  }
+
+  &.bg-primary {
+    --color: var(--color-primary) !important ;
+    --is-border-color: var(--color);
+    border-radius: 6px;
+    &.block {
+      --color: #988b6a !important;
+    }
+
+    .p-dropdown-trigger {
+      background-color: var(--color);
+    }
+
+    .p-dropdown-label {
+      --label-radius: 6px 0 0 6px;
+      &,
+      &.p-inputtext:not(.input-square):not(.p-input-outlined) {
+        background-color: var(--color);
+      }
+      &,
+      * {
+        color: var(--white-color, #fff);
+      }
+    }
+    .p-dropdown-trigger-icon,
+    .p-dropdown-clear-icon {
+      color: var(--white-color, #fff);
+    }
+
+    &,
+    &:hover {
+      &,
+      &:not(.p-disabled) {
+        background-color: var(--color);
+        background-image: unset !important;
+      }
+    }
+  }
+}
+
+.p-dropdown-panel {
+  &.p-ph-0 {
+    .p-dropdown-header {
+      padding: 0;
+    }
+  }
+}
+
+[dir="rtl"] {
+  .p-dropdown {
+    --label-radius: 0 5px 5px 0;
+    .p-dropdown-clear-icon {
+      right: auto;
+      left: 3rem;
+    }
+    &.p-dropdown-clearable {
+      .p-dropdown-label {
+        padding-left: nth($inputPadding, 2) + $primeIconFontSize;
+        padding-right: nth($inputPadding, 2);
+      }
+    }
+    .p-dropdown-trigger {
+      border-radius: 4px 0 0 4px !important;
+    }
+    &.bg-primary {
+      .p-dropdown-label {
+        --label-radius: 0 6px 6px 0;
+      }
+    }
+  }
+}
+.p-dropdown-items {
+  li {
+    max-width: 100%;
+    overflow-x: hidden;
+    white-space: normal;
+  }
+}
+
+p-dropdown.p-inputtext{
+  padding: 0;
+}

@@ -1,0 +1,48 @@
+.new-user-td {
+  --avatarBg: var(--color-white);
+  border-width: 0 1px 1px 1px;
+  border-color: var(--dt-border-color, #e0deda);
+  border-style: solid;
+  background: var(--new-user-td-background, #f2f2f2);
+  &__link {
+    color: var(--textColor);
+  }
+}
+
+
+.p-overlaypanel.permissionsListPanel {
+  margin-top: 0;
+  min-width: 25ch;
+  &::before,
+  &:after {
+    content: none;
+  }
+}
+
+.permissionsList {
+  li {
+    padding: 0.7rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--dt-border-color, #e0deda);
+    }
+    &:hover {
+      background: var(--menuitemHoverBg);
+    }
+  }
+}
+
+.permission-table {
+  .p-datatable-tbody {
+    > tr {
+       > td {
+         padding-top: 0.4rem;
+         padding-bottom: 0.4rem;
+       }
+      &:not(:last-child) {
+        > td {
+          border-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}
